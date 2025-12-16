@@ -59,10 +59,10 @@ export const Services: React.FC<ServicesProps> = ({ translations }) => {
       <div className="relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             {translations.services.title}
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {translations.services.intro}
           </p>
           <div className="flex items-center justify-center gap-2 mt-8">

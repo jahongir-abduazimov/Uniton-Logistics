@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Translations } from '@/lib/i18n';
 import { Button } from '@/components/ui/Button';
+import { ConsultationModal } from '@/components/ui/ConsultationModal';
 import { ArrowRight, Truck, Globe, Shield } from 'lucide-react';
 
 interface HeroProps {
@@ -10,11 +11,17 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ translations }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openConsultationModal = () => {
+    setIsModalOpen(true);
   };
 
   return (
@@ -55,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in">
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-          <span className="text-sm font-medium">15+ Years of Excellence</span>
+          <span className="text-sm font-medium">{translations.hero.yearsOfExcellence}</span>
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight animate-fade-in-up">
@@ -70,17 +77,17 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
           <div className="flex items-center gap-2">
             <Truck className="text-blue-300" size={20} />
             <span className="font-semibold">50K+</span>
-            <span className="text-blue-200">Deliveries</span>
+            <span className="text-blue-200">{translations.hero.deliveries}</span>
           </div>
           <div className="flex items-center gap-2">
             <Globe className="text-blue-300" size={20} />
             <span className="font-semibold">30+</span>
-            <span className="text-blue-200">Countries</span>
+            <span className="text-blue-200">{translations.hero.countries}</span>
           </div>
           <div className="flex items-center gap-2">
             <Shield className="text-blue-300" size={20} />
             <span className="font-semibold">99.9%</span>
-            <span className="text-blue-200">Safety Rate</span>
+            <span className="text-blue-200">{translations.hero.safetyRate}</span>
           </div>
         </div>
 
@@ -88,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
           <Button
             variant="secondary"
             size="md"
-            onClick={scrollToContact}
+            onClick={openConsultationModal}
             className="group flex items-center justify-center gap-2 shadow-2xl hover:scale-105 transition-transform"
           >
             <span>{translations.hero.getQuote}</span>
@@ -104,6 +111,13 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
           </Button>
         </div>
       </div>
+
+      {/* Consultation Modal */}
+      <ConsultationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        translations={translations}
+      />
     </section>
   );
 };

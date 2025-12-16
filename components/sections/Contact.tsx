@@ -5,7 +5,8 @@ import { Translations } from '@/lib/i18n';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface ContactProps {
   translations: Translations;
@@ -23,12 +24,25 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
     cargoDescription: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     // Form submission logic would go here
     console.log('Form submitted:', formData);
-    alert(translations.locale === 'en' ? 'Thank you! We will contact you soon.' : 'Спасибо! Мы свяжемся с вами в ближайшее время.');
     setFormData({ name: '', surname: '', email: '', company: '', phone: '', from: '', to: '', cargoDescription: '' });
+    setIsSubmitting(false);
+    setShowSuccess(true);
+  };
+
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
   };
 
   const handleChange = (
@@ -45,7 +59,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
       <div className="">
         {/* Header */}
         <div className="text-center lg:mb-16 mb-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             {translations.contact.title}
           </h2>
           <p className="text-base lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -75,10 +89,10 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.locale === 'en' ? 'Enter your name' : 'Введите ваше имя'}
+                      placeholder={translations.contact.form.placeholders.name}
                     />
                   </div>
-                  
+
                   <div>
                     <label
                       htmlFor="email"
@@ -94,7 +108,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.locale === 'en' ? 'your@email.com' : 'ваш@email.com'}
+                      placeholder={translations.contact.form.placeholders.email}
                     />
                   </div>
                 </div>
@@ -116,7 +130,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.locale === 'en' ? 'Company name' : 'Название компании'}
+                      placeholder={translations.contact.form.placeholders.company}
                     />
                   </div>
                   <div>
@@ -133,12 +147,12 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.locale === 'en' ? '+1 (555) 123-4567' : '+7 (999) 123-45-67'}
+                      placeholder={translations.contact.form.placeholders.phone}
                     />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
+                  <div>
                     <label
                       htmlFor="from"
                       className="block text-sm font-semibold text-gray-800 mb-2"
@@ -152,7 +166,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       value={formData.from}
                       onChange={handleChange}
                       className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.locale === 'en' ? 'Origin' : 'Откуда'}
+                      placeholder={translations.contact.form.placeholders.from}
                     />
                   </div>
                   <div>
@@ -169,7 +183,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       value={formData.to}
                       onChange={handleChange}
                       className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.locale === 'en' ? 'Destination' : 'Куда'}
+                      placeholder={translations.contact.form.placeholders.to}
                     />
                   </div>
                 </div>
@@ -190,7 +204,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                     required
                     rows={6}
                     className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 resize-none hover:border-gray-300"
-                    placeholder={translations.locale === 'en' ? 'Describe your cargo...' : 'Опишите ваш груз...'}
+                    placeholder={translations.contact.form.placeholders.cargoDescription}
                   />
                 </div>
 
@@ -198,9 +212,17 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                   type="submit"
                   variant="primary"
                   size="lg"
+                  disabled={isSubmitting}
                   className="w-full py-3 md:text-lg text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
                 >
-                  {translations.contact.form.submit}
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      {translations.contact.form.submitting || 'Sending...'}
+                    </span>
+                  ) : (
+                    translations.contact.form.submit
+                  )}
                 </Button>
               </form>
             </Card>
@@ -210,7 +232,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
           <div className="lg:col-span-1 space-y-4 mt-8 lg:mt-0">
             <Card className="p-6 shadow-lg border-0 bg-gradient-to-br from-[#074C6E] to-[#063d57] text-white">
               <h3 className="text-xl font-bold mb-6 text-white">
-                {translations.locale === 'en' ? 'Contact Information' : 'Контактная информация'}
+                {translations.contact.contactInformation}
               </h3>
               <div className="space-y-5">
                 <div className="flex items-start gap-3">
@@ -246,9 +268,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       {translations.contact.info.address}
                     </h4>
                     <p className="text-white/80 text-sm leading-relaxed">
-                      {translations.locale === 'en'
-                        ? '123 Logistics Street, Business District, City 12345'
-                        : 'ул. Логистическая, 123, Бизнес-район, Город 12345'}
+                      {translations.contact.info.addressText}
                     </p>
                   </div>
                 </div>
@@ -257,6 +277,42 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showSuccess && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={handleSuccessClose}
+        >
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300" />
+          <div
+            className="relative w-full max-w-sm bg-white rounded-xl shadow-2xl transform transition-all duration-300 scale-100 opacity-100"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6 text-center">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <CheckCircle className="text-green-600" size={40} />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {translations.contact.successTitle || 'Success!'}
+              </h3>
+              <p className="text-gray-600 text-sm mb-6">
+                {translations.contact.thankYouMessage}
+              </p>
+              <Button
+                onClick={handleSuccessClose}
+                variant="primary"
+                size="md"
+                className="w-full"
+              >
+                {translations.contact.successButton || 'Close'}
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </Section>
   );
 };

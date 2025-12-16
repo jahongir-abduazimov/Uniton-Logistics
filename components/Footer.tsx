@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
             @ {new Date().getFullYear()} {translations.footer.copyright}
           </p>
           <div className="flex items-center gap-2 text-blue-100 text-sm">
-            <span>{translations.locale === 'en' ? 'Made by' : 'Сделано'}</span>
+            <span>{translations.footer.madeBy}</span>
             <Link target="_blank" href="https://netqadam.uz" className="text-white hover:text-gray-300 transition-colors">Netqadam</Link>
             {/* <span>{translations.locale === 'en' ? 'for logistics excellence' : 'для превосходства в логистике'}</span> */}
           </div>

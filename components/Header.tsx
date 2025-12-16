@@ -200,7 +200,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
                 >
                   <Phone size={18} className="text-[#074C6E]" />
                   <div className="flex-1">
-                    <div className="font-medium">Call Us</div>
+                    <div className="font-medium">{translations.header.callUs}</div>
                     <div className="text-sm text-gray-500">+1 (555) 123-4567</div>
                   </div>
                 </button>

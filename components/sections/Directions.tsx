@@ -19,6 +19,7 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
     china: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&h=600&fit=crop',
     turkey: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=600&fit=crop',
     kazakhstan: 'https://www.unocha.org/sites/default/files/styles/full_width_2_1_246/public/2023-06/AdobeStock_284095826.jpeg.webp',
+    uzbekistan: 'https://www.tracksaroundtheworld.de/wp-content/uploads/2025/06/250527-19-ED56121D-2464-48F0-8818-D2DB1C295EB0-1170x680.jpg',
     asia: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&h=600&fit=crop&q=80',
   };
 
@@ -31,10 +32,10 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
       <div className="relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             {translations.directions.title}
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {translations.directions.subtitle}
           </p>
           <div className="flex items-center justify-center gap-2 mt-8">

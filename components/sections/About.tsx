@@ -40,9 +40,7 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
                   {translations.advantages.items.efficiency}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {translations.locale === 'en'
-                    ? 'Timely delivery guaranteed with real-time tracking'
-                    : 'Гарантированная своевременная доставка с отслеживанием в реальном времени'}
+                  {translations.about.efficiencyDescription}
                 </p>
               </div>
             </div>
@@ -59,9 +57,7 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
                   {translations.advantages.items.reliability}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {translations.locale === 'en'
-                    ? 'Your cargo is safe with us - fully insured and monitored'
-                    : 'Ваш груз в безопасности с нами - полностью застрахован и отслеживается'}
+                  {translations.about.reliabilityDescription}
                 </p>
               </div>
             </div>
@@ -75,12 +71,10 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
               </div>
               <div className="flex-1 pt-1">
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#074C6E] transition-colors">
-                  {translations.locale === 'en' ? 'Global Reach' : 'Глобальный охват'}
+                  {translations.about.globalReach}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {translations.locale === 'en'
-                    ? 'Worldwide shipping network covering 30+ countries'
-                    : 'Всемирная сеть доставки, охватывающая более 30 стран'}
+                  {translations.about.globalReachDescription}
                 </p>
               </div>
             </div>
@@ -107,9 +101,7 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
               </div>
               <div className="h-1 w-24 bg-white/30 mx-auto rounded-full" />
               <p className="mt-6 text-blue-100 text-lg">
-                {translations.locale === 'en'
-                  ? 'Delivering excellence worldwide'
-                  : 'Доставляем превосходство по всему миру'}
+                {translations.about.deliveringExcellence}
               </p>
             </div>
           </div>

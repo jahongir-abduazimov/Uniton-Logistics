@@ -12,12 +12,17 @@ export interface Translations {
       advantages: string;
       contact: string;
     };
+    callUs: string;
   };
   hero: {
     headline: string;
     subtitle: string;
     getQuote: string;
     contactUs: string;
+    yearsOfExcellence: string;
+    deliveries: string;
+    countries: string;
+    safetyRate: string;
   };
   services: {
     title: string;
@@ -52,6 +57,11 @@ export interface Translations {
   about: {
     title: string;
     description: string;
+    globalReach: string;
+    efficiencyDescription: string;
+    reliabilityDescription: string;
+    globalReachDescription: string;
+    deliveringExcellence: string;
   };
   advantages: {
     subtitle: string;
@@ -66,6 +76,7 @@ export interface Translations {
     };
   };
   statistics: {
+    title: string;
     yearsExperience: string;
     deliveredCargos: string;
     partnerCompanies: string;
@@ -85,6 +96,10 @@ export interface Translations {
   contact: {
     title: string;
     subtitle: string;
+    contactInformation: string;
+    thankYouMessage: string;
+    successTitle: string;
+    successButton: string;
     form: {
       name: string;
       surname: string;
@@ -95,11 +110,22 @@ export interface Translations {
       to: string;
       cargoDescription: string;
       submit: string;
+      submitting: string;
+      placeholders: {
+        name: string;
+        email: string;
+        company: string;
+        phone: string;
+        from: string;
+        to: string;
+        cargoDescription: string;
+      };
     };
     info: {
       phone: string;
       email: string;
       address: string;
+      addressText: string;
     };
   };
   cargoTypes: {
@@ -123,6 +149,29 @@ export interface Translations {
   footer: {
     slogan: string;
     copyright: string;
+    madeBy: string;
+  };
+  consultationModal: {
+    title: string;
+    subtitle: string;
+    thankYouMessage: string;
+    successTitle: string;
+    successButton: string;
+    form: {
+      name: string;
+      phone: string;
+      email: string;
+      description: string;
+      submit: string;
+      cancel: string;
+      submitting: string;
+      placeholders: {
+        name: string;
+        phone: string;
+        email: string;
+        description: string;
+      };
+    };
   };
 }
 
@@ -136,12 +185,17 @@ export const translations: Record<Locale, Translations> = {
         advantages: 'Advantages',
         contact: 'Contact',
       },
+      callUs: 'Call Us',
     },
     hero: {
       headline: 'Reliable Logistics Solutions for Your Business',
       subtitle: 'International & Local Freight Services',
-      getQuote: 'Get a Quote',
+      getQuote: 'Get Consultation',
       contactUs: 'Contact Us',
+      yearsOfExcellence: '15+ Years of Excellence',
+      deliveries: 'Deliveries',
+      countries: 'Countries',
+      safetyRate: 'Safety Rate',
     },
     services: {
       title: 'What we offer',
@@ -177,6 +231,11 @@ export const translations: Record<Locale, Translations> = {
       title: 'About Us',
       description:
         'With years of experience in the logistics industry, we provide reliable and efficient transportation solutions. Our team is committed to delivering your cargo safely and on time, ensuring the highest standards of service quality.',
+      globalReach: 'Global Reach',
+      efficiencyDescription: 'Timely delivery guaranteed with real-time tracking',
+      reliabilityDescription: 'Your cargo is safe with us - fully insured and monitored',
+      globalReachDescription: 'Worldwide shipping network covering 30+ countries',
+      deliveringExcellence: 'Delivering excellence worldwide',
     },
     advantages: {
       subtitle: 'ADVANTAGES OF WORK',
@@ -191,6 +250,7 @@ export const translations: Record<Locale, Translations> = {
       },
     },
     statistics: {
+      title: 'Our Achievements',
       yearsExperience: 'Years of Experience',
       deliveredCargos: 'Delivered Cargos',
       partnerCompanies: 'Partner Companies',
@@ -242,6 +302,16 @@ export const translations: Record<Locale, Translations> = {
           ],
         },
         {
+          key: 'uzbekistan',
+          name: 'Uzbekistan',
+          serviceType: 'Import / Export',
+          services: [
+            'Road transport',
+            'Rail transport',
+            'Multimodal transport',
+          ],
+        },
+        {
           key: 'asia',
           name: 'Asia',
           serviceType: 'Import / Export',
@@ -256,6 +326,10 @@ export const translations: Record<Locale, Translations> = {
     contact: {
       title: 'Contact Us and Find Out',
       subtitle: 'How to quickly, safely, and profitably deliver cargo to the desired destination',
+      contactInformation: 'Contact Information',
+      thankYouMessage: 'Thank you! We will contact you soon.',
+      successTitle: 'Success!',
+      successButton: 'Close',
       form: {
         name: 'Name',
         surname: 'Surname',
@@ -266,11 +340,22 @@ export const translations: Record<Locale, Translations> = {
         to: 'To',
         cargoDescription: 'Cargo Description',
         submit: 'Send Request',
+        submitting: 'Sending...',
+        placeholders: {
+          name: 'Enter your name',
+          email: 'your@email.com',
+          company: 'Company name',
+          phone: '+1 (555) 123-4567',
+          from: 'Origin',
+          to: 'Destination',
+          cargoDescription: 'Describe your cargo...',
+        },
       },
       info: {
         phone: 'Phone',
         email: 'Email',
         address: 'Address',
+        addressText: '123 Logistics Street, Business District, City 12345',
       },
     },
     cargoTypes: {
@@ -294,6 +379,29 @@ export const translations: Record<Locale, Translations> = {
     footer: {
       slogan: 'Your trusted partner in logistics',
       copyright: 'Uniton Logistics. All rights reserved.',
+      madeBy: 'Made by',
+    },
+    consultationModal: {
+      title: 'Get Consultation',
+      subtitle: 'Fill out the form and we will contact you',
+      thankYouMessage: 'Thank you! We will contact you soon.',
+      successTitle: 'Success!',
+      successButton: 'Close',
+      form: {
+        name: 'Name',
+        phone: 'Phone Number',
+        email: 'Email',
+        description: 'Description',
+        submit: 'Send Request',
+        cancel: 'Cancel',
+        submitting: 'Sending...',
+        placeholders: {
+          name: 'Enter your name',
+          phone: '+1 (555) 123-4567',
+          email: 'your@email.com',
+          description: 'Tell us about your needs...',
+        },
+      },
     },
   },
   ru: {
@@ -305,12 +413,17 @@ export const translations: Record<Locale, Translations> = {
         advantages: 'Преимущества',
         contact: 'Контакты',
       },
+      callUs: 'Позвоните нам',
     },
     hero: {
       headline: 'Надежные логистические решения для вашего бизнеса',
       subtitle: 'Международные и местные грузоперевозки',
-      getQuote: 'Получить расчет',
+      getQuote: 'Получить консультацию',
       contactUs: 'Связаться с нами',
+      yearsOfExcellence: '15+ лет превосходства',
+      deliveries: 'Доставок',
+      countries: 'Стран',
+      safetyRate: 'Уровень безопасности',
     },
     services: {
       title: 'Что мы предлагаем',
@@ -346,6 +459,11 @@ export const translations: Record<Locale, Translations> = {
       title: 'О нас',
       description:
         'Имея многолетний опыт в логистической отрасли, мы предоставляем надежные и эффективные решения для транспортировки. Наша команда стремится доставить ваш груз безопасно и вовремя, обеспечивая высочайшие стандарты качества обслуживания.',
+      globalReach: 'Глобальный охват',
+      efficiencyDescription: 'Гарантированная своевременная доставка с отслеживанием в реальном времени',
+      reliabilityDescription: 'Ваш груз в безопасности с нами - полностью застрахован и отслеживается',
+      globalReachDescription: 'Всемирная сеть доставки, охватывающая более 30 стран',
+      deliveringExcellence: 'Доставляем превосходство по всему миру',
     },
     advantages: {
       subtitle: 'ПРЕИМУЩЕСТВА РАБОТЫ',
@@ -360,6 +478,7 @@ export const translations: Record<Locale, Translations> = {
       },
     },
     statistics: {
+      title: 'Наши достижения',
       yearsExperience: 'Лет опыта',
       deliveredCargos: 'Доставленных грузов',
       partnerCompanies: 'Компаний-партнеров',
@@ -411,6 +530,16 @@ export const translations: Record<Locale, Translations> = {
           ],
         },
         {
+          key: 'uzbekistan',
+          name: 'Узбекистан',
+          serviceType: 'Импорт / Экспорт',
+          services: [
+            'Авто перевозки',
+            'Ж/д перевозки',
+            'Мультимодальные перевозки',
+          ],
+        },
+        {
           key: 'asia',
           name: 'Азия',
           serviceType: 'Импорт / Экспорт',
@@ -425,6 +554,10 @@ export const translations: Record<Locale, Translations> = {
     contact: {
       title: 'СВЯЖИТЕСЬ С НАМИ И УЗНАЙТЕ',
       subtitle: 'Как быстро, безопасно и выгодно доставить груз в нужный пункт назначения',
+      contactInformation: 'Контактная информация',
+      thankYouMessage: 'Спасибо! Мы свяжемся с вами в ближайшее время.',
+      successTitle: 'Успешно!',
+      successButton: 'Закрыть',
       form: {
         name: 'Имя',
         surname: 'Фамилия',
@@ -435,11 +568,22 @@ export const translations: Record<Locale, Translations> = {
         to: 'К',
         cargoDescription: 'Описание груза',
         submit: 'Отправить заявку',
+        submitting: 'Отправка...',
+        placeholders: {
+          name: 'Введите ваше имя',
+          email: 'ваш@email.com',
+          company: 'Название компании',
+          phone: '+7 (999) 123-45-67',
+          from: 'Откуда',
+          to: 'Куда',
+          cargoDescription: 'Опишите ваш груз...',
+        },
       },
       info: {
         phone: 'Телефон',
         email: 'Email',
         address: 'Адрес',
+        addressText: 'ул. Логистическая, 123, Бизнес-район, Город 12345',
       },
     },
     cargoTypes: {
@@ -463,6 +607,29 @@ export const translations: Record<Locale, Translations> = {
     footer: {
       slogan: 'Ваш надежный партнер в логистике',
       copyright: 'Uniton Logistics. Все права защищены.',
+      madeBy: 'Сделано',
+    },
+    consultationModal: {
+      title: 'Получить консультацию',
+      subtitle: 'Заполните форму, и мы свяжемся с вами',
+      thankYouMessage: 'Спасибо! Мы свяжемся с вами в ближайшее время.',
+      successTitle: 'Успешно!',
+      successButton: 'Закрыть',
+      form: {
+        name: 'Имя',
+        phone: 'Номер телефона',
+        email: 'Электронная почта',
+        description: 'Описание',
+        submit: 'Отправить запрос',
+        cancel: 'Отмена',
+        submitting: 'Отправка...',
+        placeholders: {
+          name: 'Введите ваше имя',
+          phone: '+7 (999) 123-45-67',
+          email: 'ваш@email.com',
+          description: 'Расскажите нам о ваших потребностях...',
+        },
+      },
     },
   },
 };
