@@ -43,8 +43,8 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
         </div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#074C6E]/80 via-[#0a5f84]/75 to-[#063d57]/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#074C6E]/70 via-[#0a5f84]/65 to-[#063d57]/70" />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* Background Shapes */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-[#0ea5e9]/20 rounded-full blur-3xl" />
@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
         </div>
 
         <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-          <span className="block bg-gradient-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl">
+          <span className="block bg-linear-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl">
             {translations.hero.headline}
           </span>
         </h1>

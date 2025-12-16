@@ -55,7 +55,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
   };
 
   return (
-    <Section id="contact" className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-20">
+    <Section id="contact" className="bg-linear-to-br from-gray-50 via-white to-gray-50 py-20">
       <div className="">
         {/* Header */}
         <div className="text-center lg:mb-16 mb-8">
@@ -230,7 +230,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
 
           {/* Contact Info - Compact version, moved below on mobile */}
           <div className="lg:col-span-1 space-y-4 mt-8 lg:mt-0">
-            <Card className="p-6 shadow-lg border-0 bg-gradient-to-br from-[#074C6E] to-[#063d57] text-white">
+            <Card className="p-6 shadow-lg border-0 bg-linear-to-br from-[#074C6E] to-[#063d57] text-white">
               <h3 className="text-xl font-bold mb-6 text-white">
                 {translations.contact.contactInformation}
               </h3>

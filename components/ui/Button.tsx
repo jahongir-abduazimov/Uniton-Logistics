@@ -19,11 +19,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-[#074C6E] to-[#0ea5e9] text-white hover:from-[#063d57] hover:to-[#074C6E] focus:ring-[#074C6E] shadow-lg hover:shadow-glow transition-all duration-300',
+      'bg-linear-to-r from-[#074C6E] to-[#0ea5e9] text-white hover:from-[#063d57] hover:to-[#074C6E] focus:ring-[#074C6E] shadow-lg hover:shadow-glow transition-all duration-300',
     secondary:
-      'bg-white text-[#074C6E] border-2 border-[#074C6E] hover:bg-gradient-to-r hover:from-[#074C6E] hover:to-[#0ea5e9] hover:text-white hover:border-transparent focus:ring-[#074C6E] shadow-md hover:shadow-glow transition-all duration-300',
+      'bg-white text-[#074C6E] border-2 border-[#074C6E] focus:ring-[#074C6E] shadow-md hover:shadow-glow transition-all duration-300',
     outline:
-      'bg-transparent text-[#074C6E] border-2 border-[#074C6E] hover:bg-gradient-to-r hover:from-[#074C6E] hover:to-[#0ea5e9] hover:text-white hover:border-transparent focus:ring-[#074C6E] transition-all duration-300',
+      'bg-transparent text-[#074C6E] border-2 border-[#074C6E] hover:bg-linear-to-r hover:from-[#074C6E] hover:to-[#0ea5e9] hover:text-white hover:border-transparent focus:ring-[#074C6E] transition-all duration-300',
   };
 
   const sizes = {

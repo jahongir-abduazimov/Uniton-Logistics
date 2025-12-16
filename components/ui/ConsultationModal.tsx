@@ -148,7 +148,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="sticky top-0 bg-gradient-to-r from-[#074C6E] to-[#063d57] text-white p-4 rounded-t-xl flex items-center justify-between z-10">
+            <div className="sticky top-0 bg-linear-to-r from-[#074C6E] to-[#063d57] text-white p-4 rounded-t-xl flex items-center justify-between z-10">
               <div>
                 <h2 className="text-xl font-bold mb-0.5">
                   {translations.consultationModal?.title || 'Get Consultation'}

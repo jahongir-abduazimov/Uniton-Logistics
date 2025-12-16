@@ -11,7 +11,7 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
   return (
     <Section id="about" className="relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#074C6E]/5 to-transparent" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-[#074C6E]/5 to-transparent" />
 
       <div className="grid md:grid-cols-2 gap-16 items-center relative z-10">
         <div className="space-y-8">
@@ -29,9 +29,9 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
 
           <div className="space-y-6">
             <div className="flex items-start gap-5 group">
-              <div className="relative flex-shrink-0">
+              <div className="relative shrink-0">
                 <div className="absolute inset-0 bg-[#074C6E]/20 rounded-xl blur-md group-hover:blur-lg transition-all" />
-                <div className="relative p-4 bg-gradient-to-br from-[#074C6E] to-[#085f87] rounded-xl shadow-lg group-hover:scale-110 transition-transform">
+                <div className="relative p-4 bg-linear-to-br from-[#074C6E] to-[#085f87] rounded-xl shadow-lg group-hover:scale-110 transition-transform">
                   <Clock className="text-white" size={28} />
                 </div>
               </div>
@@ -46,9 +46,9 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
             </div>
 
             <div className="flex items-start gap-5 group">
-              <div className="relative flex-shrink-0">
+              <div className="relative shrink-0">
                 <div className="absolute inset-0 bg-[#074C6E]/20 rounded-xl blur-md group-hover:blur-lg transition-all" />
-                <div className="relative p-4 bg-gradient-to-br from-[#074C6E] to-[#085f87] rounded-xl shadow-lg group-hover:scale-110 transition-transform">
+                <div className="relative p-4 bg-linear-to-br from-[#074C6E] to-[#085f87] rounded-xl shadow-lg group-hover:scale-110 transition-transform">
                   <Shield className="text-white" size={28} />
                 </div>
               </div>
@@ -63,9 +63,9 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
             </div>
 
             <div className="flex items-start gap-5 group">
-              <div className="relative flex-shrink-0">
+              <div className="relative shrink-0">
                 <div className="absolute inset-0 bg-[#074C6E]/20 rounded-xl blur-md group-hover:blur-lg transition-all" />
-                <div className="relative p-4 bg-gradient-to-br from-[#074C6E] to-[#085f87] rounded-xl shadow-lg group-hover:scale-110 transition-transform">
+                <div className="relative p-4 bg-linear-to-br from-[#074C6E] to-[#085f87] rounded-xl shadow-lg group-hover:scale-110 transition-transform">
                   <Globe className="text-white" size={28} />
                 </div>
               </div>
@@ -86,7 +86,7 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#074C6E]/10 rounded-full blur-2xl" />
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#074C6E]/10 rounded-full blur-2xl" />
 
-          <div className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] rounded-3xl p-12 text-white shadow-glow-strong overflow-hidden">
+          <div className="relative bg-linear-to-br from-[#074C6E] via-[#085f87] to-[#063d57] rounded-3xl p-12 text-white shadow-glow-strong overflow-hidden">
             {/* Simple Lines - Represents Logistics Routes */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-1/4 left-0 w-full h-0.5 bg-white" />
@@ -95,13 +95,13 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
             </div>
 
             <div className="relative z-10 text-center">
-              <div className="text-7xl md:text-8xl font-extrabold mb-4 bg-gradient-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
+              <div className="text-7xl md:text-8xl font-extrabold mb-4 bg-linear-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
                 15+
               </div>
               <div className="text-2xl md:text-3xl font-semibold opacity-95 mb-6">
                 {translations.statistics.yearsExperience}
               </div>
-              <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto rounded-full" />
+              <div className="h-1 w-24 bg-linear-to-r from-transparent via-white/50 to-transparent mx-auto rounded-full" />
               <p className="mt-6 text-blue-100 text-lg font-light">
                 {translations.about.deliveringExcellence}
               </p>

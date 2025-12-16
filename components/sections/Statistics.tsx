@@ -15,7 +15,7 @@ const stats = [
 
 export const Statistics: React.FC<StatisticsProps> = ({ translations }) => {
   return (
-    <Section className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white overflow-hidden">
+    <Section className="relative bg-linear-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full" style={{
@@ -41,7 +41,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ translations }) => {
               key={index}
               className="group text-center space-y-3 p-6 rounded-2xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20"
             >
-              <div className="text-3xl lg:text-6xl font-extrabold mb-2 bg-gradient-to-b from-white to-blue-200 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+              <div className="text-3xl lg:text-6xl font-extrabold mb-2 bg-linear-to-b from-white to-blue-200 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                 {stat.value}
               </div>
               <div className="text-base md:text-lg font-medium opacity-90 group-hover:opacity-100 transition-opacity">

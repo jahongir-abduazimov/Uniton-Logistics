@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white py-16 md:py-20 px-4 md:px-6 lg:px-8 overflow-hidden">
+    <footer className="relative bg-linear-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white py-16 px-4 md:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Company Info */}
@@ -55,10 +55,10 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="group relative p-3.5 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-gradient-to-br hover:from-white/20 hover:to-[#0ea5e9]/20 transition-all duration-300 hover:scale-110 border border-white/10 hover:border-white/30 hover:shadow-glow"
+                    className="group relative p-3.5 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-linear-to-br hover:from-white/20 hover:to-[#0ea5e9]/20 transition-all duration-300 hover:scale-110 border border-white/10 hover:border-white/30 hover:shadow-glow"
                   >
                     <Icon size={20} className="group-hover:scale-110 transition-transform relative z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#0ea5e9]/0 to-[#0ea5e9]/0 group-hover:from-[#0ea5e9]/20 group-hover:to-transparent rounded-xl transition-all duration-300" />
+                    <div className="absolute inset-0 bg-linear-to-br from-[#0ea5e9]/0 to-[#0ea5e9]/0 group-hover:from-[#0ea5e9]/20 group-hover:to-transparent rounded-xl transition-all duration-300" />
                   </a>
                 );
               })}
@@ -140,26 +140,26 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
             </h4>
             <ul className="space-y-4 text-blue-100">
               <li className="flex items-center gap-3 group hover:text-white transition-all duration-300 hover:translate-x-2">
-                <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-gradient-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30">
+                <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-linear-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30">
                   <Phone className="text-white" size={18} />
                 </div>
                 <a href="tel:+998915371967" className="font-medium hover:underline">+998 91 537 1967</a>
               </li>
               <li className="flex items-center gap-3 group hover:text-white transition-all duration-300 hover:translate-x-2">
-                <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-gradient-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30">
+                <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-linear-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30">
                   <Phone className="text-white" size={18} />
                 </div>
                 <a href="tel:+998883978781" className="font-medium hover:underline">+998 88 397 8781</a>
               </li>
               <li className="flex items-center gap-3 group hover:text-white transition-all duration-300 hover:translate-x-2">
-                <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-gradient-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30">
+                <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-linear-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30">
                   <Mail className="text-white" size={18} />
                 </div>
                 <a href="mailto:info@unitonlogistics.com" className="font-medium hover:underline break-all">info@unitonlogistics.com</a>
               </li>
               {translations.contact.info.addressText && (
                 <li className="flex items-start gap-3 group hover:text-white transition-all duration-300 hover:translate-x-2">
-                  <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-gradient-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30 mt-0.5">
+                  <div className="p-2.5 bg-white/10 rounded-xl group-hover:bg-linear-to-br group-hover:from-white/20 group-hover:to-[#0ea5e9]/20 transition-all duration-300 group-hover:scale-110 border border-white/10 group-hover:border-white/30 mt-0.5">
                     <MapPin className="text-white" size={18} />
                   </div>
                   <span className="font-medium text-sm leading-relaxed">{translations.contact.info.addressText}</span>
