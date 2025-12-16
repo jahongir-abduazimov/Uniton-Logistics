@@ -34,7 +34,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+15551234567';
+    window.location.href = 'tel:+998915371967';
+  };
+  const handleCall2 = () => {
+    window.location.href = 'tel:+998883978781';
   };
 
   return (
@@ -118,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
                 }`}
             >
               <Phone size={18} />
-              <span className="hidden xl:inline">+1 (555) 123-4567</span>
+              <span className="hidden xl:inline">+998 91 537 1967</span>
             </button>
             <LanguageSwitcher currentLocale={locale} isScrolled={isScrolled} />
           </div>
@@ -201,11 +204,21 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
                   <Phone size={18} className="text-[#074C6E]" />
                   <div className="flex-1">
                     <div className="font-medium">{translations.header.callUs}</div>
-                    <div className="text-sm text-gray-500">+1 (555) 123-4567</div>
+                    <div className="text-sm text-gray-500">+998 91 537 1967</div>
+                  </div>
+                </button>
+                <button
+                  onClick={handleCall2}
+                  className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-50 transition-colors rounded-lg text-gray-700"
+                >
+                  <Phone size={18} className="text-[#074C6E]" />
+                  <div className="flex-1">
+                    <div className="font-medium">{translations.header.callUs}</div>
+                    <div className="text-sm text-gray-500">+998 88 397 8781</div>
                   </div>
                 </button>
                 <div className="px-4 py-3">
-                  <LanguageSwitcher currentLocale={locale} isScrolled={isScrolled || isMobileMenuOpen} />
+                  <LanguageSwitcher currentLocale={locale} isScrolled={isScrolled || isMobileMenuOpen} isMobile={true} />
                 </div>
               </div>
             </div>
@@ -215,4 +228,3 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
     </header>
   );
 };
-

@@ -10,12 +10,14 @@ interface LanguageSwitcherProps {
   currentLocale: Locale;
   className?: string;
   isScrolled?: boolean;
+  isMobile?: boolean;
 }
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   currentLocale,
   className,
   isScrolled = false,
+  isMobile = false,
 }) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -23,6 +25,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isMobile) return; // Don't need click outside handler for mobile
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -30,7 +33,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [isMobile]);
 
   const switchLanguage = (locale: Locale) => {
     // Remove current locale from pathname
@@ -46,6 +49,29 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     ru: 'Русский',
   };
 
+  // Mobile version: 2 buttons side by side
+  if (isMobile) {
+    return (
+      <div className={cn('flex gap-2', className)}>
+        {locales.map((locale) => (
+          <button
+            key={locale}
+            onClick={() => switchLanguage(locale)}
+            className={cn(
+              'flex-1 px-4 py-2 rounded-lg transition-all font-medium border',
+              currentLocale === locale
+                ? 'bg-[#074C6E] text-white border-[#074C6E]'
+                : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+            )}
+          >
+            {locale.toUpperCase()}
+          </button>
+        ))}
+      </div>
+    );
+  }
+
+  // Desktop version: dropdown
   return (
     <div className={cn('relative', className)} ref={dropdownRef}>
       <button

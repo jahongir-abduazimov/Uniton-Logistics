@@ -61,7 +61,13 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
                 <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
                   <Phone className="text-white" size={18} />
                 </div>
-                <span>+1 (555) 123-4567</span>
+                <span>+998 91 537 1967</span>
+              </li>
+              <li className="flex items-center gap-3 group hover:text-white transition-colors">
+                <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
+                  <Phone className="text-white" size={18} />
+                </div>
+                <span>+998 88 397 8781</span>
               </li>
               <li className="flex items-center gap-3 group hover:text-white transition-colors">
                 <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
