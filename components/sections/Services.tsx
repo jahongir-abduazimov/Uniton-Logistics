@@ -52,9 +52,9 @@ export const Services: React.FC<ServicesProps> = ({ translations }) => {
   return (
     <Section id="services" className="bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
       {/* Modern Background Decorations */}
-      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#074C6E]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 animate-float" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#074C6E]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-radial-gradient from-[#074C6E]/5 via-[#0ea5e9]/3 to-transparent rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#074C6E]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#074C6E]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-radial-gradient from-[#074C6E]/5 via-[#0ea5e9]/3 to-transparent rounded-full blur-3xl" />
 
       <div className="relative z-10">
         {/* Header Section */}
@@ -70,7 +70,7 @@ export const Services: React.FC<ServicesProps> = ({ translations }) => {
           </p>
           <div className="flex items-center justify-center gap-2 mt-10">
             <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#074C6E] to-[#0ea5e9] rounded-full" />
-            <div className="w-3 h-3 bg-gradient-to-br from-[#074C6E] to-[#0ea5e9] rounded-full animate-pulse" />
+            <div className="w-3 h-3 bg-gradient-to-br from-[#074C6E] to-[#0ea5e9] rounded-full" />
             <div className="w-20 h-1 bg-gradient-to-r from-[#0ea5e9] via-[#074C6E] to-transparent rounded-full" />
           </div>
         </div>
@@ -84,14 +84,10 @@ export const Services: React.FC<ServicesProps> = ({ translations }) => {
             return (
               <Card
                 key={config.key}
-                className="group relative overflow-hidden border border-gray-200/60 hover:border-[#074C6E]/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2 bg-white/90 backdrop-blur-sm animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group relative overflow-hidden border border-gray-200/60 hover:border-[#074C6E]/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2 bg-white/90 backdrop-blur-sm"
               >
-                {/* Animated Background Gradient */}
+                {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${config.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-
-                {/* Shimmer Effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 animate-shimmer transition-opacity duration-500" />
 
                 {/* Content */}
                 <div className="relative z-10 p-6 lg:p-8">
@@ -120,7 +116,7 @@ export const Services: React.FC<ServicesProps> = ({ translations }) => {
                     {service.description}
                   </p>
 
-                  {/* Decorative Line with Animation */}
+                  {/* Decorative Line */}
                   <div className="mt-6 h-1 w-0 group-hover:w-full bg-gradient-to-r from-[#074C6E] via-[#0ea5e9] to-transparent transition-all duration-500 rounded-full" />
 
                   {/* Hover Arrow Indicator */}

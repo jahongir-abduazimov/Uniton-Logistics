@@ -88,7 +88,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
+                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200"
                       placeholder={translations.contact.form.placeholders.name}
                     />
                   </div>

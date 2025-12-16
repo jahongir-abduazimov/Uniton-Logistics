@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
       {/* Background Image/Video */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Optimized Background Image */}
-        <div className="absolute inset-0 scale-105 animate-scale-in">
+        <div className="absolute inset-0 scale-105">
           <Image
             src="/img/hero-bg.jpg"
             alt="Logistics background"
@@ -42,38 +42,37 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
           />
         </div>
 
-        {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#074C6E]/80 via-[#0a5f84]/75 to-[#063d57]/80 animate-gradient" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#074C6E]/80 via-[#0a5f84]/75 to-[#063d57]/80" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
 
-        {/* Animated Background Shapes */}
-        <div className="absolute top-20 right-20 w-72 h-72 bg-[#0ea5e9]/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#074C6E]/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0ea5e9]/10 rounded-full blur-3xl animate-pulse-glow" />
+        {/* Background Shapes */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-[#0ea5e9]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#074C6E]/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0ea5e9]/10 rounded-full blur-3xl" />
       </div>
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Modern Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 glass-strong rounded-full border border-white/30 animate-fade-in-down shadow-glow">
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 glass-strong rounded-full border border-white/30 shadow-glow">
           <div className="relative">
-            <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75" />
             <div className="relative w-2.5 h-2.5 bg-green-400 rounded-full" />
           </div>
           <span className="text-sm font-semibold tracking-wide">{translations.hero.yearsOfExcellence}</span>
         </div>
 
-        <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 leading-tight tracking-tight animate-fade-in-up">
+        <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
           <span className="block bg-gradient-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl">
             {translations.hero.headline}
           </span>
         </h1>
-        <p className="text-xl md:text-2xl lg:text-3xl mb-12 text-blue-50/95 max-w-4xl mx-auto font-light leading-relaxed animate-fade-in-up drop-shadow-lg" style={{ animationDelay: '0.2s' }}>
+        <p className="text-xl md:text-2xl lg:text-3xl mb-12 text-blue-50/95 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-lg">
           {translations.hero.subtitle}
         </p>
 
         {/* Modern Stats Bar */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12">
           <div className="group flex items-center gap-3 px-5 py-3 glass rounded-full border border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:scale-110">
             <div className="p-2 bg-white/20 rounded-full group-hover:bg-white/30 transition-colors">
               <Truck className="text-blue-200 group-hover:text-white" size={20} />
@@ -103,7 +102,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             variant="secondary"
             size="lg"

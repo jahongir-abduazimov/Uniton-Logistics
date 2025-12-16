@@ -58,7 +58,7 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
                 backgroundRepeat: 'no-repeat',
               }}
             >
-              {/* Dark Overlay - Tiniqlashadi hover qilinganda */}
+              {/* Dark Overlay */}
               <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-all duration-500" />
 
               {/* Content */}

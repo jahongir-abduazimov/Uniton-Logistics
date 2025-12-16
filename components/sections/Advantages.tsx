@@ -47,7 +47,6 @@ export const Advantages: React.FC<AdvantagesProps> = ({ translations }) => {
                 <div
                   key={key}
                   className="group flex items-start gap-4 p-3 lg:p-6 rounded-xl bg-white border border-gray-200/60 hover:border-[#074C6E]/40 hover:shadow-lg hover:shadow-[#074C6E]/5 transition-all duration-300 hover:-translate-y-0.5"
-                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {/* Checkmark Icon */}
                   <div className="relative shrink-0 mt-0.5">

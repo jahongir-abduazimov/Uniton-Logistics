@@ -94,9 +94,9 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={handleSuccessClose}
         >
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
           <div
-            className="relative w-full max-w-sm bg-white rounded-xl shadow-2xl transform transition-all duration-300 scale-100 opacity-100"
+            className="relative w-full max-w-sm bg-white rounded-xl shadow-2xl scale-100 opacity-100"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6 text-center">
@@ -133,7 +133,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
           {/* Backdrop */}
           <div
             className={cn(
-              'absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300',
+              'absolute inset-0 bg-black/40 backdrop-blur-sm',
               isOpen ? 'opacity-100' : 'opacity-0'
             )}
           />
@@ -141,7 +141,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
           {/* Modal */}
           <div
             className={cn(
-              'relative w-full max-w-md bg-white rounded-xl shadow-2xl transform transition-all duration-300',
+              'relative w-full max-w-md bg-white rounded-xl shadow-2xl',
               isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0',
               'max-h-[90vh] overflow-y-auto'
             )}
@@ -251,7 +251,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-3 py-2 text-sm text-gray-900 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] focus:bg-white outline-none transition-all duration-200 resize-none hover:ring-gray-400 placeholder:text-gray-400"
+                  className="w-full px-3 py-2 text-sm text-gray-900 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] focus:bg-white outline-none resize-none hover:ring-gray-400 placeholder:text-gray-400"
                   placeholder={translations.consultationModal?.form.placeholders.description || 'Tell us about your needs...'}
                 />
               </div>

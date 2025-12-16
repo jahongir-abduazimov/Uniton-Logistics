@@ -87,11 +87,11 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#074C6E]/10 rounded-full blur-2xl" />
 
           <div className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] rounded-3xl p-12 text-white shadow-glow-strong overflow-hidden">
-            {/* Simple Moving Lines - Represents Logistics Routes */}
+            {/* Simple Lines - Represents Logistics Routes */}
             <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-1/4 left-0 w-full h-0.5 bg-white animate-moving-line" />
-              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white animate-moving-line" style={{ animationDelay: '2s' }} />
-              <div className="absolute top-3/4 left-0 w-full h-0.5 bg-white animate-moving-line" style={{ animationDelay: '4s' }} />
+              <div className="absolute top-1/4 left-0 w-full h-0.5 bg-white" />
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white" />
+              <div className="absolute top-3/4 left-0 w-full h-0.5 bg-white" />
             </div>
 
             <div className="relative z-10 text-center">

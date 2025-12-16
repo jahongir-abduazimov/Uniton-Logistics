@@ -88,7 +88,7 @@ export const CargoTypes: React.FC<CargoTypesProps> = ({ translations }) => {
               >
                 {/* Category Card */}
                 <div className="relative h-full p-8 rounded-3xl bg-linear-to-br from-gray-50 to-white border-2 border-[#074C6E]/30 lg:border-gray-100 hover:border-[#074C6E]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#074C6E]/10 hover:-translate-y-2">
-                  {/* Animated Background Gradient */}
+                  {/* Background Gradient */}
                   <div className={`absolute inset-0 bg-linear-to-br ${category.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`} />
 
                   {/* Category Icon */}
@@ -114,7 +114,6 @@ export const CargoTypes: React.FC<CargoTypesProps> = ({ translations }) => {
                         <div
                           key={item.key}
                           className="flex items-center gap-4 p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 hover:border-[#074C6E]/40 hover:bg-white hover:shadow-md transition-all duration-300 group/item"
-                          style={{ animationDelay: `${(categoryIndex * 100) + (itemIndex * 50)}ms` }}
                         >
                           {/* Item Icon */}
                           <div className="relative shrink-0">
