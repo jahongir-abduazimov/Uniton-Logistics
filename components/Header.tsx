@@ -42,8 +42,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 px-4 md:px-6 lg:px-8 ${isScrolled || isMobileMenuOpen
-        ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-gray-100'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 lg:px-8 ${isScrolled || isMobileMenuOpen
+        ? 'bg-white/90 backdrop-blur-xl shadow-modern border-b border-gray-200/50'
         : 'bg-transparent'
         }`}
     >
@@ -64,49 +64,49 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center gap-1 absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden lg:flex items-center gap-2 absolute left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => scrollToSection('services')}
-              className={`px-4 py-2 transition-all font-medium rounded-lg hover:bg-[#074C6E]/10 relative group ${isScrolled
+              className={`px-5 py-2.5 transition-all font-semibold rounded-xl hover:bg-gradient-to-r hover:from-[#074C6E]/10 hover:to-[#0ea5e9]/10 relative group ${isScrolled
                 ? 'text-gray-700 hover:text-[#074C6E]'
                 : 'text-white hover:text-blue-200'
                 }`}
             >
               {translations.header.nav.services}
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${isScrolled ? 'bg-[#074C6E]' : 'bg-white'
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 group-hover:w-3/4 transition-all duration-300 rounded-full ${isScrolled ? 'bg-gradient-to-r from-[#074C6E] to-[#0ea5e9]' : 'bg-gradient-to-r from-white to-blue-200'
                 }`} />
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className={`px-4 py-2 transition-all font-medium rounded-lg hover:bg-[#074C6E]/10 relative group ${isScrolled
+              className={`px-5 py-2.5 transition-all font-semibold rounded-xl hover:bg-gradient-to-r hover:from-[#074C6E]/10 hover:to-[#0ea5e9]/10 relative group ${isScrolled
                 ? 'text-gray-700 hover:text-[#074C6E]'
                 : 'text-white hover:text-blue-200'
                 }`}
             >
               {translations.header.nav.about}
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${isScrolled ? 'bg-[#074C6E]' : 'bg-white'
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 group-hover:w-3/4 transition-all duration-300 rounded-full ${isScrolled ? 'bg-gradient-to-r from-[#074C6E] to-[#0ea5e9]' : 'bg-gradient-to-r from-white to-blue-200'
                 }`} />
             </button>
             <button
               onClick={() => scrollToSection('advantages')}
-              className={`px-4 py-2 transition-all font-medium rounded-lg hover:bg-[#074C6E]/10 relative group ${isScrolled
+              className={`px-5 py-2.5 transition-all font-semibold rounded-xl hover:bg-gradient-to-r hover:from-[#074C6E]/10 hover:to-[#0ea5e9]/10 relative group ${isScrolled
                 ? 'text-gray-700 hover:text-[#074C6E]'
                 : 'text-white hover:text-blue-200'
                 }`}
             >
               {translations.header.nav.advantages}
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${isScrolled ? 'bg-[#074C6E]' : 'bg-white'
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 group-hover:w-3/4 transition-all duration-300 rounded-full ${isScrolled ? 'bg-gradient-to-r from-[#074C6E] to-[#0ea5e9]' : 'bg-gradient-to-r from-white to-blue-200'
                 }`} />
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className={`px-4 py-2 transition-all font-medium rounded-lg hover:bg-[#074C6E]/10 relative group ${isScrolled
+              className={`px-5 py-2.5 transition-all font-semibold rounded-xl hover:bg-gradient-to-r hover:from-[#074C6E]/10 hover:to-[#0ea5e9]/10 relative group ${isScrolled
                 ? 'text-gray-700 hover:text-[#074C6E]'
                 : 'text-white hover:text-blue-200'
                 }`}
             >
               {translations.header.nav.contact}
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${isScrolled ? 'bg-[#074C6E]' : 'bg-white'
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 group-hover:w-3/4 transition-all duration-300 rounded-full ${isScrolled ? 'bg-gradient-to-r from-[#074C6E] to-[#0ea5e9]' : 'bg-gradient-to-r from-white to-blue-200'
                 }`} />
             </button>
           </div>
@@ -115,12 +115,12 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
           <div className="hidden lg:flex items-center gap-4">
             <button
               onClick={handleCall}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all font-medium ${isScrolled
-                ? 'bg-[#074C6E] text-white hover:bg-[#063d57]'
-                : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm'
+              className={`group flex items-center gap-2 px-5 py-2.5 rounded-xl transition-all font-semibold shadow-lg hover:shadow-glow ${isScrolled
+                ? 'bg-gradient-to-r from-[#074C6E] to-[#0ea5e9] text-white hover:from-[#063d57] hover:to-[#074C6E]'
+                : 'glass-strong text-white hover:bg-white/20 border border-white/30'
                 }`}
             >
-              <Phone size={18} />
+              <Phone size={18} className="group-hover:scale-110 transition-transform" />
               <span className="hidden xl:inline">+998 91 537 1967</span>
             </button>
             <LanguageSwitcher currentLocale={locale} isScrolled={isScrolled} />
@@ -146,54 +146,54 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
             <div className="flex flex-col gap-3">
               <button
                 onClick={() => scrollToSection('services')}
-                className={`flex items-center justify-between text-left transition-all duration-300 font-medium px-4 py-3 rounded-xl border ${isScrolled || isMobileMenuOpen
-                  ? 'text-[#074C6E] border-[#074C6E]/30'
-                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10'
+                className={`group flex items-center justify-between text-left transition-all duration-300 font-semibold px-5 py-3.5 rounded-xl border hover:scale-[1.02] ${isScrolled || isMobileMenuOpen
+                  ? 'text-[#074C6E] border-[#074C6E]/30 hover:bg-gradient-to-r hover:from-[#074C6E]/5 hover:to-[#0ea5e9]/5 hover:border-[#074C6E]/50'
+                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10 glass'
                   }`}
               >
                 <span>{translations.header.nav.services}</span>
                 <ChevronRight
                   size={20}
-                  className={isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}
+                  className={`transition-transform group-hover:translate-x-1 ${isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}`}
                 />
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className={`flex items-center justify-between text-left transition-all duration-300 font-medium px-4 py-3 rounded-xl border ${isScrolled || isMobileMenuOpen
-                  ? 'text-[#074C6E] border-[#074C6E]/30'
-                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10'
+                className={`group flex items-center justify-between text-left transition-all duration-300 font-semibold px-5 py-3.5 rounded-xl border hover:scale-[1.02] ${isScrolled || isMobileMenuOpen
+                  ? 'text-[#074C6E] border-[#074C6E]/30 hover:bg-gradient-to-r hover:from-[#074C6E]/5 hover:to-[#0ea5e9]/5 hover:border-[#074C6E]/50'
+                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10 glass'
                   }`}
               >
                 <span>{translations.header.nav.about}</span>
                 <ChevronRight
                   size={20}
-                  className={isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}
+                  className={`transition-transform group-hover:translate-x-1 ${isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}`}
                 />
               </button>
               <button
                 onClick={() => scrollToSection('advantages')}
-                className={`flex items-center justify-between text-left transition-all duration-300 font-medium px-4 py-3 rounded-xl border ${isScrolled || isMobileMenuOpen
-                  ? 'text-[#074C6E] border-[#074C6E]/30'
-                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10'
+                className={`group flex items-center justify-between text-left transition-all duration-300 font-semibold px-5 py-3.5 rounded-xl border hover:scale-[1.02] ${isScrolled || isMobileMenuOpen
+                  ? 'text-[#074C6E] border-[#074C6E]/30 hover:bg-gradient-to-r hover:from-[#074C6E]/5 hover:to-[#0ea5e9]/5 hover:border-[#074C6E]/50'
+                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10 glass'
                   }`}
               >
                 <span>{translations.header.nav.advantages}</span>
                 <ChevronRight
                   size={20}
-                  className={isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}
+                  className={`transition-transform group-hover:translate-x-1 ${isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}`}
                 />
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className={`flex items-center justify-between text-left transition-all duration-300 font-medium px-4 py-3 rounded-xl border ${isScrolled || isMobileMenuOpen
-                  ? 'text-[#074C6E] border-[#074C6E]/30'
-                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10'
+                className={`group flex items-center justify-between text-left transition-all duration-300 font-semibold px-5 py-3.5 rounded-xl border hover:scale-[1.02] ${isScrolled || isMobileMenuOpen
+                  ? 'text-[#074C6E] border-[#074C6E]/30 hover:bg-gradient-to-r hover:from-[#074C6E]/5 hover:to-[#0ea5e9]/5 hover:border-[#074C6E]/50'
+                  : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10 glass'
                   }`}
               >
                 <span>{translations.header.nav.contact}</span>
                 <ChevronRight
                   size={20}
-                  className={isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}
+                  className={`transition-transform group-hover:translate-x-1 ${isScrolled || isMobileMenuOpen ? 'text-[#074C6E]' : 'text-white'}`}
                 />
               </button>
               <div className="border-t border-gray-200 pt-4 mt-2">

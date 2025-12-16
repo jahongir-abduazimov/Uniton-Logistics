@@ -50,25 +50,28 @@ const servicesConfig = [
 
 export const Services: React.FC<ServicesProps> = ({ translations }) => {
   return (
-    <Section id="services" className="bg-linear-to-b from-white via-gray-50/30 to-white relative overflow-hidden">
+    <Section id="services" className="bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
       {/* Modern Background Decorations */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-linear-to-br from-[#074C6E]/8 to-transparent rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-linear-to-tr from-[#074C6E]/8 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-[#074C6E]/3 via-transparent to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#074C6E]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 animate-float" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#074C6E]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-radial-gradient from-[#074C6E]/5 via-[#0ea5e9]/3 to-transparent rounded-full blur-3xl animate-pulse-glow" />
 
       <div className="relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+        <div className="text-center mb-16 md:mb-20">
+          <div className="inline-block px-4 py-2 mb-6 bg-gradient-to-r from-[#074C6E]/10 to-[#0ea5e9]/10 rounded-full border border-[#074C6E]/20 text-[#074C6E] text-xs md:text-sm font-semibold uppercase tracking-wider">
             {translations.services.title}
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            <span className="gradient-text">{translations.services.title}</span>
           </h2>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {translations.services.intro}
           </p>
-          <div className="flex items-center justify-center gap-2 mt-8">
-            <div className="w-16 h-1 bg-linear-to-r from-transparent via-[#074C6E] to-transparent rounded-full" />
-            <div className="w-2 h-2 bg-[#074C6E] rounded-full" />
-            <div className="w-16 h-1 bg-linear-to-r from-transparent via-[#074C6E] to-transparent rounded-full" />
+          <div className="flex items-center justify-center gap-2 mt-10">
+            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#074C6E] to-[#0ea5e9] rounded-full" />
+            <div className="w-3 h-3 bg-gradient-to-br from-[#074C6E] to-[#0ea5e9] rounded-full animate-pulse" />
+            <div className="w-20 h-1 bg-gradient-to-r from-[#0ea5e9] via-[#074C6E] to-transparent rounded-full" />
           </div>
         </div>
 
@@ -81,40 +84,53 @@ export const Services: React.FC<ServicesProps> = ({ translations }) => {
             return (
               <Card
                 key={config.key}
-                className="group relative overflow-hidden border lg:border-gray-200/80 border-[#074C6E]/30 hover:border-[#074C6E]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#074C6E]/10 hover:-translate-y-1 bg-white/80 backdrop-blur-sm"
+                className="group relative overflow-hidden border border-gray-200/60 hover:border-[#074C6E]/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2 bg-white/90 backdrop-blur-sm animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Animated Background Gradient */}
-                <div className={`absolute inset-0 bg-linear-to-br ${config.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${config.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                {/* Shimmer Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 animate-shimmer transition-opacity duration-500" />
 
                 {/* Content */}
                 <div className="relative z-10 p-6 lg:p-8">
                   {/* Icon */}
-                  <div className="flex items-start gap-4 mb-4">
+                  <div className="flex items-start gap-4 mb-5">
                     <div className="relative shrink-0">
                       {/* Icon Glow Effect */}
-                      <div className={`absolute inset-0 bg-linear-to-br ${config.gradient} opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-opacity duration-500`} />
+                      <div className={`absolute inset-0 bg-gradient-to-br ${config.gradient} opacity-0 group-hover:opacity-30 rounded-2xl blur-2xl transition-opacity duration-500 scale-150`} />
 
                       {/* Icon Container */}
-                      <div className={`relative p-4 bg-linear-to-br ${config.gradient} rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
-                        <Icon className="text-white" size={28} strokeWidth={2.5} />
+                      <div className={`relative p-4 bg-gradient-to-br ${config.gradient} rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-glow`}>
+                        <Icon className="text-white" size={30} strokeWidth={2.5} />
                       </div>
                     </div>
 
                     {/* Title */}
                     <div className="flex-1 pt-1">
-                      <h3 className="text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-[#074C6E] transition-colors duration-300 leading-tight">
+                      <h3 className="text-xl lg:text-2xl font-bold text-gray-900 group-hover:gradient-text transition-all duration-300 leading-tight">
                         {service.title}
                       </h3>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base group-hover:text-gray-800 transition-colors duration-300 mb-4">
                     {service.description}
                   </p>
 
-                  {/* Decorative Line */}
-                  <div className="mt-6 h-0.5 lg:w-0 w-full group-hover:w-full bg-linear-to-r from-[#074C6E] to-transparent transition-all duration-500 rounded-full" />
+                  {/* Decorative Line with Animation */}
+                  <div className="mt-6 h-1 w-0 group-hover:w-full bg-gradient-to-r from-[#074C6E] via-[#0ea5e9] to-transparent transition-all duration-500 rounded-full" />
+
+                  {/* Hover Arrow Indicator */}
+                  {/* <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#074C6E] to-[#0ea5e9] flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div> */}
                 </div>
               </Card>
             );

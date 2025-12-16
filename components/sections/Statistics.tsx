@@ -15,7 +15,7 @@ const stats = [
 
 export const Statistics: React.FC<StatisticsProps> = ({ translations }) => {
   return (
-    <Section className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white overflow-hidden">
+    <Section className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white overflow-hidden animate-gradient">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full" style={{

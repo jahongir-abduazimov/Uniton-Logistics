@@ -15,15 +15,15 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
+    'font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer hover:scale-105 active:scale-95';
 
   const variants = {
     primary:
-      'bg-[#074C6E] text-white hover:bg-[#063d57] focus:ring-[#074C6E] shadow-md hover:shadow-lg',
+      'bg-gradient-to-r from-[#074C6E] to-[#0ea5e9] text-white hover:from-[#063d57] hover:to-[#074C6E] focus:ring-[#074C6E] shadow-lg hover:shadow-glow transition-all duration-300',
     secondary:
-      'bg-white text-[#074C6E] border-2 border-[#074C6E] hover:bg-[#074C6E] hover:text-white focus:ring-[#074C6E]',
+      'bg-white text-[#074C6E] border-2 border-[#074C6E] hover:bg-gradient-to-r hover:from-[#074C6E] hover:to-[#0ea5e9] hover:text-white hover:border-transparent focus:ring-[#074C6E] shadow-md hover:shadow-glow transition-all duration-300',
     outline:
-      'bg-transparent text-[#074C6E] border-2 border-[#074C6E] hover:bg-[#074C6E] hover:text-white focus:ring-[#074C6E]',
+      'bg-transparent text-[#074C6E] border-2 border-[#074C6E] hover:bg-gradient-to-r hover:from-[#074C6E] hover:to-[#0ea5e9] hover:text-white hover:border-transparent focus:ring-[#074C6E] transition-all duration-300',
   };
 
   const sizes = {

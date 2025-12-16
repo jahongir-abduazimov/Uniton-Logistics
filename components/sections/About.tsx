@@ -86,21 +86,23 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#074C6E]/10 rounded-full blur-2xl" />
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#074C6E]/10 rounded-full blur-2xl" />
 
-          <div className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] rounded-3xl p-12 text-white shadow-2xl overflow-hidden">
-            {/* Pattern Overlay */}
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h20v-2h-2v-2h-2v-2h-2V8h-2V6h-2V4h-2V2h-2V0h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2h-2v2h-2v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h-2v-2h-2v-2h-2v-2h-2V8h-2V6h-2V4h-2V2h-2V0h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2h-2v2h-2v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h-2v-2h-2v-2h-2v-2h-2V8h-2V6h-2V4h-2V2h-2V0h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2h-2v2h-2v2h-2v2h-2v2z'/%3E%3C/g%3E%3C/svg%3E")`,
-            }} />
+          <div className="relative bg-gradient-to-br from-[#074C6E] via-[#085f87] to-[#063d57] rounded-3xl p-12 text-white shadow-glow-strong overflow-hidden">
+            {/* Simple Moving Lines - Represents Logistics Routes */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-1/4 left-0 w-full h-0.5 bg-white animate-moving-line" />
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white animate-moving-line" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-3/4 left-0 w-full h-0.5 bg-white animate-moving-line" style={{ animationDelay: '4s' }} />
+            </div>
 
             <div className="relative z-10 text-center">
-              <div className="text-7xl md:text-8xl font-extrabold mb-4 bg-gradient-to-b from-white to-blue-100 bg-clip-text text-transparent">
+              <div className="text-7xl md:text-8xl font-extrabold mb-4 bg-gradient-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
                 15+
               </div>
               <div className="text-2xl md:text-3xl font-semibold opacity-95 mb-6">
                 {translations.statistics.yearsExperience}
               </div>
-              <div className="h-1 w-24 bg-white/30 mx-auto rounded-full" />
-              <p className="mt-6 text-blue-100 text-lg">
+              <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto rounded-full" />
+              <p className="mt-6 text-blue-100 text-lg font-light">
                 {translations.about.deliveringExcellence}
               </p>
             </div>
