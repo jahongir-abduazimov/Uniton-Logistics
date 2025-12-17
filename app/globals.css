@@ -110,12 +110,12 @@ body {
 
 /* Modern selection */
 ::selection {
-  background: linear-gradient(135deg, #074c6e 0%, #0ea5e9 100%);
+  background: var(--primary);
   color: white;
 }
 
 ::-moz-selection {
-  background: linear-gradient(135deg, #074c6e 0%, #0ea5e9 100%);
+  background: var(--primary);
   color: white;
 }
 

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Translations } from '@/lib/i18n';
-import { Section } from '@/components/ui/Section';
-import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
-import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React, { useState } from "react";
+import { Translations } from "@/lib/i18n";
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ContactProps {
   translations: Translations;
@@ -14,14 +14,14 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ translations }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    surname: '',
-    email: '',
-    company: '',
-    phone: '',
-    from: '',
-    to: '',
-    cargoDescription: '',
+    name: "",
+    surname: "",
+    email: "",
+    company: "",
+    phone: "",
+    from: "",
+    to: "",
+    cargoDescription: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,8 +35,17 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     // Form submission logic would go here
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', surname: '', email: '', company: '', phone: '', from: '', to: '', cargoDescription: '' });
+    console.log("Form submitted:", formData);
+    setFormData({
+      name: "",
+      surname: "",
+      email: "",
+      company: "",
+      phone: "",
+      from: "",
+      to: "",
+      cargoDescription: "",
+    });
     setIsSubmitting(false);
     setShowSuccess(true);
   };
@@ -55,7 +64,10 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
   };
 
   return (
-    <Section id="contact" className="bg-linear-to-br from-gray-50 via-white to-gray-50 py-20">
+    <Section
+      id="contact"
+      className="bg-linear-to-br from-gray-50 via-white to-gray-50 py-20"
+    >
       <div className="">
         {/* Header */}
         <div className="text-center lg:mb-16 mb-8">
@@ -79,7 +91,8 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       htmlFor="name"
                       className="block text-sm font-semibold text-gray-800 mb-2"
                     >
-                      {translations.contact.form.name} <span className="text-red-500">*</span>
+                      {translations.contact.form.name}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -98,7 +111,8 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       htmlFor="email"
                       className="block text-sm font-semibold text-gray-800 mb-2"
                     >
-                      {translations.contact.form.email} <span className="text-red-500">*</span>
+                      {translations.contact.form.email}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -120,7 +134,8 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       htmlFor="company"
                       className="block text-sm font-semibold text-gray-800 mb-2"
                     >
-                      {translations.contact.form.company} <span className="text-red-500">*</span>
+                      {translations.contact.form.company}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -130,7 +145,9 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.contact.form.placeholders.company}
+                      placeholder={
+                        translations.contact.form.placeholders.company
+                      }
                     />
                   </div>
                   <div>
@@ -194,7 +211,8 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                     htmlFor="cargoDescription"
                     className="block text-sm font-semibold text-gray-800 mb-2"
                   >
-                    {translations.contact.form.cargoDescription} <span className="text-red-500">*</span>
+                    {translations.contact.form.cargoDescription}{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="cargoDescription"
@@ -204,7 +222,9 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                     required
                     rows={6}
                     className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 resize-none hover:border-gray-300"
-                    placeholder={translations.contact.form.placeholders.cargoDescription}
+                    placeholder={
+                      translations.contact.form.placeholders.cargoDescription
+                    }
                   />
                 </div>
 
@@ -218,7 +238,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      {translations.contact.form.submitting || 'Sending...'}
+                      {translations.contact.form.submitting || "Sending..."}
                     </span>
                   ) : (
                     translations.contact.form.submit
@@ -243,7 +263,18 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                     <h4 className="font-semibold text-sm text-white/90 mb-1">
                       {translations.contact.info.phone}
                     </h4>
-                    <p className="text-white/80 text-sm">+1 (555) 123-4567</p>
+                    <p className="text-white/80 text-sm">+998 91 537 1967</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm shrink-0">
+                    <Phone className="text-white" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm text-white/90 mb-1">
+                      {translations.contact.info.phone}
+                    </h4>
+                    <p className="text-white/80 text-sm">+998 88 397 8781</p>
                   </div>
                 </div>
 
@@ -255,7 +286,9 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                     <h4 className="font-semibold text-sm text-white/90 mb-1">
                       {translations.contact.info.email}
                     </h4>
-                    <p className="text-white/80 text-sm break-all">info@unitonlogistics.com</p>
+                    <p className="text-white/80 text-sm break-all">
+                      info@unitonlogistics.com
+                    </p>
                   </div>
                 </div>
 
@@ -296,7 +329,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                {translations.contact.successTitle || 'Success!'}
+                {translations.contact.successTitle || "Success!"}
               </h3>
               <p className="text-gray-600 text-sm mb-6">
                 {translations.contact.thankYouMessage}
@@ -307,7 +340,7 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
                 size="md"
                 className="w-full"
               >
-                {translations.contact.successButton || 'Close'}
+                {translations.contact.successButton || "Close"}
               </Button>
             </div>
           </div>
@@ -316,4 +349,3 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
     </Section>
   );
 };
-
