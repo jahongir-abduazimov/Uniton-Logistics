@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { locales, defaultLocale } from '@/lib/i18n';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://uniton-logistics.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://unitonlogistics.vercel.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
