@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
             alt="Logistics background"
             fill
             priority
-            quality={85}
+            // quality={100}
             className="object-cover object-right md:object-center"
             sizes="100vw"
           />

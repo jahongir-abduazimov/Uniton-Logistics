@@ -56,6 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
               alt="Uniton Logo"
               width={100}
               height={100}
+              priority
               className={`transition-all duration-200 w-20 lg:w-24 ${isScrolled || isMobileMenuOpen
                 ? 'brightness-100'
                 : 'brightness-0 invert'
