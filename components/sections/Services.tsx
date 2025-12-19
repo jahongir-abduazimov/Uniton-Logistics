@@ -58,17 +58,14 @@ export const Services: React.FC<ServicesProps> = ({ translations }) => {
 
       <div className="relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16 md:mb-20">
-          <div className="inline-block px-4 py-2 mb-6 bg-linear-to-r from-[#074C6E]/10 to-[#0ea5e9]/10 rounded-full border border-[#074C6E]/20 text-[#074C6E] text-xs md:text-sm font-semibold uppercase tracking-wider">
-            {translations.services.title}
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+        <div className="text-center mb-10 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 md:mb-6 mb-4 tracking-tight">
             <span className="gradient-text">{translations.services.title}</span>
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {translations.services.intro}
           </p>
-          <div className="flex items-center justify-center gap-2 mt-10">
+          <div className="flex items-center justify-center gap-2 mt-6 md:mt-10">
             <div className="w-20 h-1 bg-linear-to-r from-transparent via-[#074C6E] to-[#0ea5e9] rounded-full" />
             <div className="w-3 h-3 bg-linear-to-br from-[#074C6E] to-[#0ea5e9] rounded-full" />
             <div className="w-20 h-1 bg-linear-to-r from-[#0ea5e9] via-[#074C6E] to-transparent rounded-full" />

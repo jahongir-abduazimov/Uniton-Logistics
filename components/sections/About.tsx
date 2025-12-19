@@ -96,7 +96,7 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
 
             <div className="relative z-10 text-center">
               <div className="text-7xl md:text-8xl font-extrabold mb-4 bg-linear-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
-                15+
+                5+
               </div>
               <div className="text-2xl md:text-3xl font-semibold opacity-95 mb-6">
                 {translations.statistics.yearsExperience}

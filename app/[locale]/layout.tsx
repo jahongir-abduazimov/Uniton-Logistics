@@ -34,7 +34,7 @@ const seoMetadata: Record<Locale, {
 }> = {
   en: {
     title: 'Uniton Logistics - Reliable Logistics Solutions for Your Business',
-    description: 'Professional logistics services including international freight forwarding, local delivery, warehousing, and customs clearance. Fast, secure, and affordable transportation solutions. 15+ years of experience, worldwide shipping network covering 30+ countries.',
+    description: 'Professional logistics services including international freight forwarding, local delivery, warehousing, and customs clearance. Fast, secure, and affordable transportation solutions. 5+ years of experience, worldwide shipping network covering 30+ countries.',
     keywords: 'logistics, freight forwarding, shipping, delivery, warehousing, customs clearance, cargo transportation, international logistics, container logistics, road transport, sea transport, rail transport, air transport, freight services, logistics company',
     openGraphTitle: 'Uniton Logistics - Reliable Logistics Solutions',
     openGraphDescription: 'Professional logistics services including international freight, local delivery, warehousing, and customs clearance. Fast, secure, and affordable transportation solutions.',
@@ -43,7 +43,7 @@ const seoMetadata: Record<Locale, {
   },
   ru: {
     title: 'Uniton Logistics - Надежные логистические решения для вашего бизнеса',
-    description: 'Профессиональные логистические услуги, включая международные перевозки, местную доставку, складирование и таможенное оформление. Быстрые, безопасные и доступные решения для транспортировки. Более 15 лет опыта, всемирная сеть доставки, охватывающая более 30 стран.',
+    description: 'Профессиональные логистические услуги, включая международные перевозки, местную доставку, складирование и таможенное оформление. Быстрые, безопасные и доступные решения для транспортировки. Более 5 лет опыта, всемирная сеть доставки, охватывающая более 30 стран.',
     keywords: 'логистика, грузоперевозки, доставка, складирование, таможенное оформление, транспортировка грузов, международная логистика, контейнерная логистика, автомобильные перевозки, морские перевозки, железнодорожные перевозки, авиаперевозки, экспедирование грузов, логистическая компания',
     openGraphTitle: 'Uniton Logistics - Надежные логистические решения',
     openGraphDescription: 'Профессиональные логистические услуги, включая международные перевозки, местную доставку, складирование и таможенное оформление. Быстрые, безопасные и доступные решения для транспортировки.',

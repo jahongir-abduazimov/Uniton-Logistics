@@ -78,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
               <Truck className="text-blue-200 group-hover:text-white" size={20} />
             </div>
             <div className="text-left">
-              <div className="text-lg md:text-xl font-bold">50K+</div>
+              <div className="text-lg md:text-xl font-bold">10K+</div>
               <div className="text-xs md:text-sm text-blue-200/90">{translations.hero.deliveries}</div>
             </div>
           </div>

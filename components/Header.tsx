@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
                 }`} />
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('footer')}
               className={`px-5 py-2.5 transition-all font-semibold rounded-xl hover:bg-linear-to-r hover:from-[#074C6E]/10 hover:to-[#0ea5e9]/10 relative group ${isScrolled
                 ? 'text-gray-700 hover:text-[#074C6E]'
                 : 'text-white hover:text-blue-200'
@@ -115,14 +115,14 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
           {/* Right Side - CTA Button and Language Switcher */}
           <div className="hidden lg:flex items-center gap-4">
             <button
-              onClick={handleCall}
+              onClick={() => scrollToSection('contact')}
               className={`group flex items-center gap-2 px-5 py-2.5 rounded-xl transition-all font-semibold shadow-lg hover:shadow-glow ${isScrolled
                 ? 'bg-linear-to-r from-[#074C6E] to-[#0ea5e9] text-white hover:from-[#063d57] hover:to-[#074C6E]'
                 : 'glass-strong text-white hover:bg-white/20 border border-white/30'
                 }`}
             >
               <Phone size={18} className="group-hover:scale-110 transition-transform" />
-              <span className="hidden xl:inline">+998 91 537 1967</span>
+              <span className="hidden xl:inline">{translations.header.getQuote}</span>
             </button>
             <LanguageSwitcher currentLocale={locale} isScrolled={isScrolled} />
           </div>
@@ -185,7 +185,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
                 />
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('footer')}
                 className={`group flex items-center justify-between text-left transition-all duration-300 font-semibold px-5 py-3.5 rounded-xl border hover:scale-[1.02] ${isScrolled || isMobileMenuOpen
                   ? 'text-[#074C6E] border-[#074C6E]/30 hover:bg-linear-to-r hover:from-[#074C6E]/5 hover:to-[#0ea5e9]/5 hover:border-[#074C6E]/50'
                   : 'text-white hover:text-blue-200 border-white/20 hover:border-white/40 hover:bg-white/10 glass'

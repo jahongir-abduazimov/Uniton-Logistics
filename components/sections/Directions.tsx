@@ -18,9 +18,7 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
     europe: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&h=600&fit=crop',
     china: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&h=600&fit=crop',
     turkey: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=600&fit=crop',
-    kazakhstan: 'https://www.unocha.org/sites/default/files/styles/full_width_2_1_246/public/2023-06/AdobeStock_284095826.jpeg.webp',
-    uzbekistan: 'https://www.tracksaroundtheworld.de/wp-content/uploads/2025/06/250527-19-ED56121D-2464-48F0-8818-D2DB1C295EB0-1170x680.jpg',
-    asia: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&h=600&fit=crop&q=80',
+    cis: 'https://www.uzdaily.uz/media/filer_public/c7/6f/c76ffada-ad6a-480e-8a5a-62a41b53e98d/cis_flags1.jpg',
   };
 
   return (
@@ -31,22 +29,22 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
 
       <div className="relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-            {translations.directions.title}
+        <div className="text-center mb-10 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 md:mb-6 mb-4 tracking-tight">
+            <span className="gradient-text">{translations.directions.title}</span>
           </h2>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {translations.directions.subtitle}
           </p>
-          <div className="flex items-center justify-center gap-2 mt-8">
-            <div className="w-16 h-1 bg-linear-to-r from-transparent via-[#074C6E] to-transparent rounded-full" />
-            <div className="w-2 h-2 bg-[#074C6E] rounded-full" />
-            <div className="w-16 h-1 bg-linear-to-r from-transparent via-[#074C6E] to-transparent rounded-full" />
+          <div className="flex items-center justify-center gap-2 mt-6 md:mt-10">
+            <div className="w-20 h-1 bg-linear-to-r from-transparent via-[#074C6E] to-[#0ea5e9] rounded-full" />
+            <div className="w-3 h-3 bg-linear-to-br from-[#074C6E] to-[#0ea5e9] rounded-full" />
+            <div className="w-20 h-1 bg-linear-to-r from-[#0ea5e9] via-[#074C6E] to-transparent rounded-full" />
           </div>
         </div>
 
         {/* Directions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {directions.map((direction, index) => (
             <div
               key={direction.key}

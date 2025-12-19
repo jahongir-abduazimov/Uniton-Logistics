@@ -13,6 +13,7 @@ export interface Translations {
       contact: string;
     };
     callUs: string;
+    getQuote: string;
   };
   hero: {
     headline: string;
@@ -101,6 +102,7 @@ export interface Translations {
     successTitle: string;
     successButton: string;
     form: {
+      requestTitle: string;
       name: string;
       surname: string;
       email: string;
@@ -108,7 +110,11 @@ export interface Translations {
       phone: string;
       from: string;
       to: string;
+      cargoType: string;
+      dimensions: string;
+      weight: string;
       cargoDescription: string;
+      consent: string;
       submit: string;
       submitting: string;
       placeholders: {
@@ -118,6 +124,9 @@ export interface Translations {
         phone: string;
         from: string;
         to: string;
+        cargoType: string;
+        dimensions: string;
+        weight: string;
         cargoDescription: string;
       };
     };
@@ -186,13 +195,14 @@ export const translations: Record<Locale, Translations> = {
         contact: 'Contact',
       },
       callUs: 'Call Us',
+      getQuote: 'Submit Request',
     },
     hero: {
       headline: 'Reliable Logistics Solutions for Your Business',
       subtitle: 'International & Local Freight Services',
       getQuote: 'Get Consultation',
       contactUs: 'Contact Us',
-      yearsOfExcellence: '15+ Years of Excellence',
+      yearsOfExcellence: '5+ Years of Excellence',
       deliveries: 'Deliveries',
       countries: 'Countries',
       safetyRate: 'Safety Rate',
@@ -292,28 +302,8 @@ export const translations: Record<Locale, Translations> = {
           ],
         },
         {
-          key: 'kazakhstan',
-          name: 'Kazakhstan',
-          serviceType: 'Import / Export',
-          services: [
-            'Road transport',
-            'Rail transport',
-            'Multimodal transport',
-          ],
-        },
-        {
-          key: 'uzbekistan',
-          name: 'Uzbekistan',
-          serviceType: 'Import / Export',
-          services: [
-            'Road transport',
-            'Rail transport',
-            'Multimodal transport',
-          ],
-        },
-        {
-          key: 'asia',
-          name: 'Asia',
+          key: 'cis',
+          name: 'CIS Countries',
           serviceType: 'Import / Export',
           services: [
             'Road transport',
@@ -331,24 +321,32 @@ export const translations: Record<Locale, Translations> = {
       successTitle: 'Success!',
       successButton: 'Close',
       form: {
-        name: 'Name',
+        requestTitle: 'Request cargo transportation cost',
+        name: 'Name / Company name',
         surname: 'Surname',
-        email: 'Email',
+        email: 'E-mail',
         company: 'Company',
         phone: 'Phone Number',
-        from: 'From',
-        to: 'To',
+        from: 'Loading',
+        to: 'Unloading',
+        cargoType: 'Cargo type',
+        dimensions: 'Dimensions',
+        weight: 'Weight',
         cargoDescription: 'Cargo Description',
-        submit: 'Send Request',
+        consent: 'I give consent to the processing of my personal data by BGT Sp. z o.o., contained in the contact form above. I have read the information on how my personal data is processed on this site.',
+        submit: 'SEND',
         submitting: 'Sending...',
         placeholders: {
-          name: 'Enter your name',
+          name: 'Enter your name or company name',
           email: 'your@email.com',
           company: 'Company name',
-          phone: '+1 (555) 123-4567',
-          from: 'Origin',
-          to: 'Destination',
-          cargoDescription: 'Describe your cargo...',
+          phone: '+48',
+          from: 'Loading location',
+          to: 'Unloading location',
+          cargoType: 'Type of cargo',
+          dimensions: 'Dimensions',
+          weight: 'Weight',
+          cargoDescription: 'Enter your inquiry or message...',
         },
       },
       info: {
@@ -414,6 +412,7 @@ export const translations: Record<Locale, Translations> = {
         contact: 'Контакты',
       },
       callUs: 'Позвоните нам',
+      getQuote: 'Оставить заявку',
     },
     hero: {
       headline: 'Надежные логистические решения для вашего бизнеса',
@@ -520,28 +519,8 @@ export const translations: Record<Locale, Translations> = {
           ],
         },
         {
-          key: 'kazakhstan',
-          name: 'Казахстан',
-          serviceType: 'Импорт / Экспорт',
-          services: [
-            'Авто перевозки',
-            'Ж/д перевозки',
-            'Мультимодальные перевозки',
-          ],
-        },
-        {
-          key: 'uzbekistan',
-          name: 'Узбекистан',
-          serviceType: 'Импорт / Экспорт',
-          services: [
-            'Авто перевозки',
-            'Ж/д перевозки',
-            'Мультимодальные перевозки',
-          ],
-        },
-        {
-          key: 'asia',
-          name: 'Азия',
+          key: 'cis',
+          name: 'СНГ',
           serviceType: 'Импорт / Экспорт',
           services: [
             'Авто перевозки',
@@ -559,24 +538,32 @@ export const translations: Record<Locale, Translations> = {
       successTitle: 'Успешно!',
       successButton: 'Закрыть',
       form: {
-        name: 'Имя',
+        requestTitle: 'Запросить стоимость перевозки груза',
+        name: 'Имя / название компании',
         surname: 'Фамилия',
-        email: 'Электронная почта',
+        email: 'E-mail',
         company: 'Компания',
         phone: 'Номер телефона',
-        from: 'От',
-        to: 'К',
+        from: 'Загрузка',
+        to: 'Выгрузка',
+        cargoType: 'Тип груза',
+        dimensions: 'Габариты',
+        weight: 'Вес',
         cargoDescription: 'Описание груза',
-        submit: 'Отправить заявку',
+        consent: 'Я даю согласие на обработку BGT Sp. z o.o. моих персональных данных, содержащиеся в контактной форме выше. Я ознакомлен (-а) с информацией о том, как обрабатываются мои персональные данные на этом сайте.',
+        submit: 'ОТПРАВИТЬ',
         submitting: 'Отправка...',
         placeholders: {
-          name: 'Введите ваше имя',
+          name: 'Введите ваше имя или название компании',
           email: 'ваш@email.com',
           company: 'Название компании',
-          phone: '+7 (999) 123-45-67',
-          from: 'Откуда',
-          to: 'Куда',
-          cargoDescription: 'Опишите ваш груз...',
+          phone: '+48',
+          from: 'Место загрузки',
+          to: 'Место выгрузки',
+          cargoType: 'Тип груза',
+          dimensions: 'Габариты',
+          weight: 'Вес',
+          cargoDescription: 'Введите ваш запрос или сообщение...',
         },
       },
       info: {

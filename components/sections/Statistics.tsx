@@ -7,9 +7,9 @@ interface StatisticsProps {
 }
 
 const stats = [
-  { value: '15+', labelKey: 'yearsExperience' as const },
-  { value: '50K+', labelKey: 'deliveredCargos' as const },
-  { value: '200+', labelKey: 'partnerCompanies' as const },
+  { value: '5+', labelKey: 'yearsExperience' as const },
+  { value: '10K+', labelKey: 'deliveredCargos' as const },
+  { value: '100+', labelKey: 'partnerCompanies' as const },
   { value: '30+', labelKey: 'countriesCovered' as const },
 ];
 
@@ -24,14 +24,14 @@ export const Statistics: React.FC<StatisticsProps> = ({ translations }) => {
       </div>
 
       <div className="relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-            {translations.statistics.title}
+        <div className="text-center mb-10 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white md:mb-6 mb-4 tracking-tight">
+            <span className="bg-linear-to-br from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">{translations.statistics.title}</span>
           </h2>
-          <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-white/30 rounded-full" />
-            <div className="w-2 h-2 bg-white rounded-full" />
-            <div className="w-12 h-1 bg-white/30 rounded-full" />
+          <div className="flex items-center justify-center gap-2 mt-6 md:mt-10">
+            <div className="w-20 h-1 bg-linear-to-r from-transparent via-white/50 to-white rounded-full" />
+            <div className="w-3 h-3 bg-linear-to-br from-white to-blue-200 rounded-full" />
+            <div className="w-20 h-1 bg-linear-to-r from-white via-white/50 to-transparent rounded-full" />
           </div>
         </div>
 

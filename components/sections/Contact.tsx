@@ -5,7 +5,7 @@ import { Translations } from "@/lib/i18n";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ContactProps {
@@ -14,14 +14,15 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ translations }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    company: "",
+    message: "",
+    loading: "",
+    unloading: "",
+    nameCompany: "",
+    cargoType: "",
     phone: "",
-    from: "",
-    to: "",
-    cargoDescription: "",
+    dimensions: "",
+    weight: "",
+    email: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,14 +38,15 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
     // Form submission logic would go here
     console.log("Form submitted:", formData);
     setFormData({
-      name: "",
-      surname: "",
-      email: "",
-      company: "",
+      message: "",
+      loading: "",
+      unloading: "",
+      nameCompany: "",
+      cargoType: "",
       phone: "",
-      from: "",
-      to: "",
-      cargoDescription: "",
+      dimensions: "",
+      weight: "",
+      email: "",
     });
     setIsSubmitting(false);
     setShowSuccess(true);
@@ -57,256 +59,250 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const value =
+      e.target.type === "checkbox"
+        ? (e.target as HTMLInputElement).checked
+        : e.target.value;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: value,
     });
   };
 
   return (
     <Section
       id="contact"
-      className="bg-linear-to-br from-gray-50 via-white to-gray-50 py-20"
+      className="bg-linear-to-br from-gray-50 via-white to-gray-50 py-20 relative overflow-hidden"
     >
-      <div className="">
+      {/* Subtle background decorations */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-[#074C6E]/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-linear-to-tr from-[#074C6E]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
+
+      <div className="relative z-10">
         {/* Header */}
-        <div className="text-center lg:mb-16 mb-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-            {translations.contact.title}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 md:mb-6 mb-4 tracking-tight">
+            <span className="gradient-text">
+              {translations.contact.title}
+            </span>
           </h2>
-          <p className="text-base lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {translations.contact.subtitle}
           </p>
+          <div className="flex items-center justify-center gap-2 mt-6 md:mt-10">
+            <div className="w-20 h-1 bg-linear-to-r from-transparent via-[#074C6E] to-[#0ea5e9] rounded-full" />
+            <div className="w-3 h-3 bg-linear-to-br from-[#074C6E] to-[#0ea5e9] rounded-full" />
+            <div className="w-20 h-1 bg-linear-to-r from-[#0ea5e9] via-[#074C6E] to-transparent rounded-full" />
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Form - Takes 2 columns */}
-          <div className="lg:col-span-2">
-            <Card className="p-5 md:p-10 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* First Row: Name, Surname, Email */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-semibold text-gray-800 mb-2"
-                    >
-                      {translations.contact.form.name}{" "}
-                      <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200"
-                      placeholder={translations.contact.form.placeholders.name}
-                    />
-                  </div>
+        {/* Form Card */}
+        <div className="relative p-4 md:p-8 lg:p-12 bg-white shadow-xl border border-gray-200 rounded-lg">
+          <div className="relative z-10">
+            {/* <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">
+              {translations.contact.form.requestTitle}
+            </h3> */}
 
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-semibold text-gray-800 mb-2"
-                    >
-                      {translations.contact.form.email}{" "}
-                      <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.contact.form.placeholders.email}
-                    />
-                  </div>
-                </div>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+              {/* General Message Field - Full Width */}
+              <div>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  required
+                  className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 resize-none font-medium"
+                  placeholder={translations.contact.form.placeholders.cargoDescription}
+                />
+              </div>
 
-                {/* Second Row: Company, Phone, From, To */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="md:col-span-1">
-                    <label
-                      htmlFor="company"
-                      className="block text-sm font-semibold text-gray-800 mb-2"
-                    >
-                      {translations.contact.form.company}{" "}
-                      <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={
-                        translations.contact.form.placeholders.company
-                      }
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-semibold text-gray-800 mb-2"
-                    >
-                      {translations.contact.form.phone}
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.contact.form.placeholders.phone}
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="from"
-                      className="block text-sm font-semibold text-gray-800 mb-2"
-                    >
-                      {translations.contact.form.from}
-                    </label>
-                    <input
-                      type="text"
-                      id="from"
-                      name="from"
-                      value={formData.from}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.contact.form.placeholders.from}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="to"
-                      className="block text-sm font-semibold text-gray-800 mb-2"
-                    >
-                      {translations.contact.form.to}
-                    </label>
-                    <input
-                      type="text"
-                      id="to"
-                      name="to"
-                      value={formData.to}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 hover:border-gray-300"
-                      placeholder={translations.contact.form.placeholders.to}
-                    />
-                  </div>
-                </div>
-
-                {/* Third Row: Cargo Description */}
+              {/* First Row: Loading, Unloading, Name/Company (3 columns) */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div>
                   <label
-                    htmlFor="cargoDescription"
-                    className="block text-sm font-semibold text-gray-800 mb-2"
+                    htmlFor="loading"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
                   >
-                    {translations.contact.form.cargoDescription}{" "}
-                    <span className="text-red-500">*</span>
+                    {translations.contact.form.from}
                   </label>
-                  <textarea
-                    id="cargoDescription"
-                    name="cargoDescription"
-                    value={formData.cargoDescription}
+                  <input
+                    type="text"
+                    id="loading"
+                    name="loading"
+                    value={formData.loading}
                     onChange={handleChange}
                     required
-                    rows={6}
-                    className="w-full px-3 py-2 bg-gray-50 rounded-lg ring-1 ring-gray-300 focus:ring-2 focus:ring-[#074C6E] outline-none transition-all duration-200 resize-none hover:border-gray-300"
-                    placeholder={
-                      translations.contact.form.placeholders.cargoDescription
-                    }
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder={translations.contact.form.placeholders.from}
                   />
                 </div>
 
-                <Button
+                <div>
+                  <label
+                    htmlFor="unloading"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
+                  >
+                    {translations.contact.form.to}
+                  </label>
+                  <input
+                    type="text"
+                    id="unloading"
+                    name="unloading"
+                    value={formData.unloading}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder={translations.contact.form.placeholders.to}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="nameCompany"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
+                  >
+                    {translations.contact.form.name}
+                  </label>
+                  <input
+                    type="text"
+                    id="nameCompany"
+                    name="nameCompany"
+                    value={formData.nameCompany}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder={translations.contact.form.placeholders.name}
+                  />
+                </div>
+              </div>
+
+              {/* Second Row: Cargo Type, Phone (2 columns) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div>
+                  <label
+                    htmlFor="cargoType"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
+                  >
+                    {translations.contact.form.cargoType}
+                  </label>
+                  <input
+                    type="text"
+                    id="cargoType"
+                    name="cargoType"
+                    value={formData.cargoType}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder={translations.contact.form.placeholders.cargoType}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
+                  >
+                    {translations.contact.form.phone}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder="+48 123 456 789"
+                  />
+                </div>
+              </div>
+
+              {/* Third Row: Dimensions, Weight, Email (3 columns) */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                <div>
+                  <label
+                    htmlFor="dimensions"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
+                  >
+                    {translations.contact.form.dimensions}
+                  </label>
+                  <input
+                    type="text"
+                    id="dimensions"
+                    name="dimensions"
+                    value={formData.dimensions}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder={translations.contact.form.placeholders.dimensions}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="weight"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
+                  >
+                    {translations.contact.form.weight}
+                  </label>
+                  <input
+                    type="text"
+                    id="weight"
+                    name="weight"
+                    value={formData.weight}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder={translations.contact.form.placeholders.weight}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-xs md:text-sm font-semibold text-gray-800 mb-2"
+                  >
+                    {translations.contact.form.email}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-3 py-2.5 text-sm md:px-4 md:py-3 md:text-base bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#074C6E] focus:border-[#074C6E] transition-all duration-300 font-medium"
+                    placeholder={translations.contact.form.placeholders.email}
+                  />
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-4">
+                <button
                   type="submit"
-                  variant="primary"
-                  size="lg"
                   disabled={isSubmitting}
-                  className="w-full py-3 md:text-lg text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+                  className={cn(
+                    "w-full py-2.5 md:py-3 text-sm md:text-base font-bold text-white uppercase tracking-wider rounded-lg",
+                    "bg-linear-to-r from-[#074C6E] to-[#0ea5e9]",
+                    "hover:from-[#063d57] hover:to-[#0c8cc7]",
+                    "focus:outline-none focus:ring-4 focus:ring-[#074C6E]/50",
+                    "shadow-lg shadow-[#074C6E]/30 hover:shadow-xl hover:shadow-[#074C6E]/40",
+                    "transform transition-all duration-300 hover:-translate-y-1",
+                    "disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none",
+                    isSubmitting && "cursor-wait"
+                  )}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      {translations.contact.form.submitting || "Sending..."}
+                      <div className="w-4 h-4 md:w-5 md:h-5 border-2 md:border-3 border-white border-t-transparent rounded-full animate-spin" />
+                      <span className="text-xs md:text-sm">{translations.contact.form.submitting}</span>
                     </span>
                   ) : (
                     translations.contact.form.submit
                   )}
-                </Button>
-              </form>
-            </Card>
-          </div>
-
-          {/* Contact Info - Compact version, moved below on mobile */}
-          <div className="lg:col-span-1 space-y-4 mt-8 lg:mt-0">
-            <Card className="p-6 shadow-lg border-0 bg-linear-to-br from-[#074C6E] to-[#063d57] text-white">
-              <h3 className="text-xl font-bold mb-6 text-white">
-                {translations.contact.contactInformation}
-              </h3>
-              <div className="space-y-5">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm shrink-0">
-                    <Phone className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-white/90 mb-1">
-                      {translations.contact.info.phone}
-                    </h4>
-                    <p className="text-white/80 text-sm">+998 91 537 1967</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm shrink-0">
-                    <Phone className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-white/90 mb-1">
-                      {translations.contact.info.phone}
-                    </h4>
-                    <p className="text-white/80 text-sm">+998 88 397 8781</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm shrink-0">
-                    <Mail className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-white/90 mb-1">
-                      {translations.contact.info.email}
-                    </h4>
-                    <p className="text-white/80 text-sm break-all">
-                      info@unitonlogistics.com
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm shrink-0">
-                    <MapPin className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-white/90 mb-1">
-                      {translations.contact.info.address}
-                    </h4>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      {translations.contact.info.addressText}
-                    </p>
-                  </div>
-                </div>
+                </button>
               </div>
-            </Card>
+            </form>
           </div>
         </div>
       </div>
@@ -317,31 +313,29 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={handleSuccessClose}
         >
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-300" />
           <div
-            className="relative w-full max-w-sm bg-white rounded-xl shadow-2xl transform transition-all duration-300 scale-100 opacity-100"
+            className="relative w-full max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-200 transform transition-all duration-300 scale-100 opacity-100 p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6 text-center">
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="text-green-600" size={40} />
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-linear-to-br from-[#074C6E] to-[#0ea5e9] rounded-full flex items-center justify-center shadow-lg">
+                  <CheckCircle className="text-white" size={48} />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                {translations.contact.successTitle || "Success!"}
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                {translations.contact.successTitle}
               </h3>
-              <p className="text-gray-600 text-sm mb-6">
+              <p className="text-gray-600 text-base mb-8 leading-relaxed">
                 {translations.contact.thankYouMessage}
               </p>
-              <Button
+              <button
                 onClick={handleSuccessClose}
-                variant="primary"
-                size="md"
-                className="w-full"
+                className="w-full py-3 px-6 bg-linear-to-r from-[#074C6E] to-[#0ea5e9] hover:from-[#063d57] hover:to-[#0c8cc7] text-white font-semibold rounded-xl shadow-lg shadow-[#074C6E]/30 hover:shadow-xl hover:shadow-[#074C6E]/40 transform transition-all duration-300 hover:-translate-y-0.5"
               >
-                {translations.contact.successButton || "Close"}
-              </Button>
+                {translations.contact.successButton}
+              </button>
             </div>
           </div>
         </div>

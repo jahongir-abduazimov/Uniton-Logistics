@@ -94,31 +94,29 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={handleSuccessClose}
         >
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-300" />
           <div
-            className="relative w-full max-w-sm bg-white rounded-xl shadow-2xl scale-100 opacity-100"
+            className="relative w-full max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-200 transform transition-all duration-300 scale-100 opacity-100 p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6 text-center">
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="text-green-600" size={40} />
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-linear-to-br from-[#074C6E] to-[#0ea5e9] rounded-full flex items-center justify-center shadow-lg">
+                  <CheckCircle className="text-white" size={48} />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 {translations.consultationModal?.successTitle || 'Success!'}
               </h3>
-              <p className="text-gray-600 text-sm mb-6">
+              <p className="text-gray-600 text-base mb-8 leading-relaxed">
                 {translations.consultationModal?.thankYouMessage || 'Thank you! We will contact you soon.'}
               </p>
-              <Button
+              <button
                 onClick={handleSuccessClose}
-                variant="primary"
-                size="md"
-                className="w-full"
+                className="w-full py-3 px-6 bg-linear-to-r from-[#074C6E] to-[#0ea5e9] hover:from-[#063d57] hover:to-[#0c8cc7] text-white font-semibold rounded-xl shadow-lg shadow-[#074C6E]/30 hover:shadow-xl hover:shadow-[#074C6E]/40 transform transition-all duration-300 hover:-translate-y-0.5"
               >
                 {translations.consultationModal?.successButton || 'Close'}
-              </Button>
+              </button>
             </div>
           </div>
         </div>

@@ -36,9 +36,9 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
   ];
 
   return (
-    <footer className="relative bg-linear-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white py-16 px-4 md:px-6 lg:px-8 overflow-hidden">
+    <footer id="footer" className="relative bg-linear-to-br from-[#074C6E] via-[#085f87] to-[#063d57] text-white py-16 px-4 md:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
@@ -101,34 +101,13 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => scrollToSection('footer')}
                   className="group flex items-center gap-2 hover:text-white transition-all duration-300 hover:translate-x-2 w-full text-left"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-white/50 group-hover:bg-white transition-colors" />
                   <span className="font-medium">{translations.header.nav.contact}</span>
                 </button>
               </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-bold text-lg mb-6 pb-2 border-b border-white/20 flex items-center gap-2">
-              <Truck size={18} />
-              {translations.services.title}
-            </h4>
-            <ul className="space-y-3 text-blue-100">
-              {services.slice(0, 5).map((service, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className="group flex items-center gap-2 hover:text-white transition-all duration-300 hover:translate-x-2 w-full text-left"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/50 group-hover:bg-white transition-colors" />
-                    <span className="text-sm font-medium">{service}</span>
-                  </button>
-                </li>
-              ))}
             </ul>
           </div>
 
