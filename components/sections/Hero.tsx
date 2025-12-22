@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
   };
 
   return (
-    <section className="relative lg:min-h-screen flex items-center justify-center md:pt-20 pt-25 pb-16 px-4 md:px-6 lg:px-8 overflow-hidden text-white">
+    <section className="relative lg:min-h-screen flex items-center justify-center pt-25 pb-16 px-4 md:px-6 lg:px-8 overflow-hidden text-white">
       {/* Background Image/Video */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Optimized Background Image */}
@@ -112,14 +112,14 @@ export const Hero: React.FC<HeroProps> = ({ translations }) => {
             <span className="font-semibold">{translations.hero.getQuote}</span>
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </Button>
-          <Button
+          {/* <Button
             variant="outline"
             size="lg"
             onClick={scrollToContact}
             className="border-2 border-white/40 text-white hover:bg-white glass hover:border-white transition-all duration-300 shadow-xl hover:scale-105 min-w-[200px] font-semibold"
           >
             {translations.hero.contactUs}
-          </Button>
+          </Button> */}
         </div>
       </div>
 

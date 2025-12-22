@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Locale, Translations } from '@/lib/i18n';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { Menu, X, Phone, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import Logo from '@/public/img/logo.png';
 import Image from 'next/image';
 
@@ -33,12 +33,6 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
     }
   };
 
-  const handleCall = () => {
-    window.location.href = 'tel:+998915371967';
-  };
-  const handleCall2 = () => {
-    window.location.href = 'tel:+998883978781';
-  };
 
   return (
     <header
@@ -89,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
                 }`} />
             </button>
             <button
-              onClick={() => scrollToSection('advantages')}
+              onClick={() => scrollToSection('directions')}
               className={`px-5 py-2.5 transition-all font-semibold rounded-xl hover:bg-linear-to-r hover:from-[#074C6E]/10 hover:to-[#0ea5e9]/10 relative group ${isScrolled
                 ? 'text-gray-700 hover:text-[#074C6E]'
                 : 'text-white hover:text-blue-200'
@@ -121,8 +115,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
                 : 'glass-strong text-white hover:bg-white/20 border border-white/30'
                 }`}
             >
-              <Phone size={18} className="group-hover:scale-110 transition-transform" />
-              <span className="hidden xl:inline">{translations.header.getQuote}</span>
+              {/* <Phone size={18} className="group-hover:scale-110 transition-transform" /> */}
+              <span className="">{translations.header.getQuote}</span>
             </button>
             <LanguageSwitcher currentLocale={locale} isScrolled={isScrolled} />
           </div>
@@ -199,24 +193,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, translations }) => {
               </button>
               <div className="border-t border-gray-200 pt-4 mt-2">
                 <button
-                  onClick={handleCall}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-50 transition-colors rounded-lg text-gray-700"
+                  onClick={() => scrollToSection('contact')}
+                  className={`w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl transition-all font-semibold shadow-lg hover:shadow-glow ${isScrolled || isMobileMenuOpen
+                    ? 'bg-linear-to-r from-[#074C6E] to-[#0ea5e9] text-white hover:from-[#063d57] hover:to-[#074C6E]'
+                    : 'glass-strong text-white hover:bg-white/20 border border-white/30'
+                    }`}
                 >
-                  <Phone size={18} className="text-[#074C6E]" />
-                  <div className="flex-1">
-                    <div className="font-medium">{translations.header.callUs}</div>
-                    <div className="text-sm text-gray-500">+998 91 537 1967</div>
-                  </div>
-                </button>
-                <button
-                  onClick={handleCall2}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-50 transition-colors rounded-lg text-gray-700"
-                >
-                  <Phone size={18} className="text-[#074C6E]" />
-                  <div className="flex-1">
-                    <div className="font-medium">{translations.header.callUs}</div>
-                    <div className="text-sm text-gray-500">+998 88 397 8781</div>
-                  </div>
+                  <span>{translations.header.getQuote}</span>
                 </button>
                 <div className="px-4 py-3">
                   <LanguageSwitcher currentLocale={locale} isScrolled={isScrolled || isMobileMenuOpen} isMobile={true} />

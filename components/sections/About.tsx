@@ -1,7 +1,7 @@
-import React from 'react';
-import { Translations } from '@/lib/i18n';
-import { Section } from '@/components/ui/Section';
-import { Globe, Clock, Shield } from 'lucide-react';
+import React from "react";
+import { Translations } from "@/lib/i18n";
+import { Section } from "@/components/ui/Section";
+import { Globe, Clock, Shield } from "lucide-react";
 
 interface AboutProps {
   translations: Translations;
@@ -20,7 +20,7 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
               TRUSTED PARTNER
             </div> */}
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-              {translations.about.title}
+              <span className="gradient-text">{translations.about.title}</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
               {translations.about.description}
@@ -112,4 +112,3 @@ export const About: React.FC<AboutProps> = ({ translations }) => {
     </Section>
   );
 };
-

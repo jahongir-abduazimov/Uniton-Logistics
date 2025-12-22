@@ -5,6 +5,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { Locale, locales } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 import { ChevronDown, Globe } from 'lucide-react';
+import ReactCountryFlag from 'react-country-flag';
 
 interface LanguageSwitcherProps {
   currentLocale: Locale;
@@ -45,8 +46,13 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   };
 
   const localeNames: Record<Locale, string> = {
-    en: 'English',
-    ru: 'Русский',
+    en: 'EN',
+    ru: 'RU',
+  };
+
+  const localeCountryCodes: Record<Locale, string> = {
+    en: 'GB',
+    ru: 'RU',
   };
 
   // Mobile version: 2 buttons side by side
@@ -58,13 +64,22 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             key={locale}
             onClick={() => switchLanguage(locale)}
             className={cn(
-              'flex-1 px-4 py-2 rounded-lg transition-all font-medium border',
+              'flex-1 px-4 py-2 rounded-lg transition-all font-medium border flex items-center justify-center gap-2',
               currentLocale === locale
                 ? 'bg-[#074C6E] text-white border-[#074C6E]'
                 : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
             )}
           >
-            {locale.toUpperCase()}
+            <ReactCountryFlag
+              countryCode={localeCountryCodes[locale]}
+              svg
+              style={{
+                width: '20px',
+                height: '15px',
+              }}
+              title={locale.toUpperCase()}
+            />
+            <span>{locale.toUpperCase()}</span>
           </button>
         ))}
       </div>
@@ -83,7 +98,15 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             : 'text-white hover:bg-white/10'
         )}
       >
-        <Globe size={18} />
+        <ReactCountryFlag
+          countryCode={localeCountryCodes[currentLocale]}
+          svg
+          style={{
+            width: '18px',
+            height: '14px',
+          }}
+          title={currentLocale.toUpperCase()}
+        />
         <span className="hidden xl:inline">{localeNames[currentLocale]}</span>
         <span className="xl:hidden">{currentLocale.toUpperCase()}</span>
         <ChevronDown
@@ -93,19 +116,28 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+        <div className="absolute right-0 mt-2 w-26 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
           {locales.map((locale) => (
             <button
               key={locale}
               onClick={() => switchLanguage(locale)}
               className={cn(
-                'w-full text-left px-4 py-2 text-sm font-medium transition-colors',
+                'w-full text-left px-4 py-2 text-sm font-medium transition-colors flex items-center gap-2',
                 currentLocale === locale
                   ? 'bg-[#074C6E]/10 text-[#074C6E]'
                   : 'text-gray-700 hover:bg-gray-50'
               )}
             >
-              {localeNames[locale]}
+              <ReactCountryFlag
+                countryCode={localeCountryCodes[locale]}
+                svg
+                style={{
+                  width: '18px',
+                  height: '14px',
+                }}
+                title={locale.toUpperCase()}
+              />
+              <span>{locale.toUpperCase()}</span>
             </button>
           ))}
         </div>
