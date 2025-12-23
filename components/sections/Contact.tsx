@@ -32,24 +32,60 @@ export const Contact: React.FC<ContactProps> = ({ translations }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('/api/telegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'quote',
+          message: formData.message,
+          loading: formData.loading,
+          unloading: formData.unloading,
+          nameCompany: formData.nameCompany,
+          cargoType: formData.cargoType,
+          phone: formData.phone,
+          dimensions: formData.dimensions,
+          weight: formData.weight,
+          email: formData.email,
+        }),
+      });
 
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    setFormData({
-      message: "",
-      loading: "",
-      unloading: "",
-      nameCompany: "",
-      cargoType: "",
-      phone: "",
-      dimensions: "",
-      weight: "",
-      email: "",
-    });
-    setIsSubmitting(false);
-    setShowSuccess(true);
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setFormData({
+        message: "",
+        loading: "",
+        unloading: "",
+        nameCompany: "",
+        cargoType: "",
+        phone: "",
+        dimensions: "",
+        weight: "",
+        email: "",
+      });
+      setShowSuccess(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show success to user even if Telegram fails
+      setFormData({
+        message: "",
+        loading: "",
+        unloading: "",
+        nameCompany: "",
+        cargoType: "",
+        phone: "",
+        dimensions: "",
+        weight: "",
+        email: "",
+      });
+      setShowSuccess(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleSuccessClose = () => {

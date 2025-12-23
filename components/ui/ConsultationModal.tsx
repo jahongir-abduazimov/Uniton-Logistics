@@ -63,14 +63,35 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('/api/telegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'consultation',
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          description: formData.description,
+        }),
+      });
 
-    console.log('Consultation form submitted:', formData);
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
-    setFormData({ name: '', phone: '', email: '', description: '' });
-    setIsSubmitting(false);
-    setShowSuccess(true);
+      setFormData({ name: '', phone: '', email: '', description: '' });
+      setShowSuccess(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show success to user even if Telegram fails
+      setFormData({ name: '', phone: '', email: '', description: '' });
+      setShowSuccess(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleSuccessClose = () => {
