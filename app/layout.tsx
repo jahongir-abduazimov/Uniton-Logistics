@@ -6,7 +6,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="unavailable">The site is temporarily unavailable.</div>
+        {children}
       </body>
     </html>
   );
