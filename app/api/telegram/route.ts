@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const TELEGRAM_BOT_TOKEN = "8396676867:AAGnB4_NfMVjuhDG3niyITZ6uEj4uVkrxk8";
-const TELEGRAM_CHAT_ID = "5050378120";
+const TELEGRAM_CHAT_ID = "-1003850182740";
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
 interface FormData {

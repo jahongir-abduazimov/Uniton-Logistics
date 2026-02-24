@@ -366,7 +366,7 @@ export const translations: Record<Locale, Translations> = {
         phone: "Phone",
         email: "Email",
         address: "Address",
-        addressText: "123 Logistics Street, Business District, City 12345",
+        addressText: "153 Panjikent Street, MFY Abdurakhmona Jomiy, Samarkand City, Samarkand Region",
       },
     },
     cargoTypes: {
@@ -597,7 +597,7 @@ export const translations: Record<Locale, Translations> = {
         phone: "Телефон",
         email: "Email",
         address: "Адрес",
-        addressText: "ул. Логистическая, 123, Бизнес-район, Город 12345",
+        addressText: "Самаркандская область, город Самарканд, МФЙ Абдурахмона Джомий, улица Панджикентская, дом 153",
       },
     },
     cargoTypes: {

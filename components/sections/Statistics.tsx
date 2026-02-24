@@ -8,7 +8,7 @@ interface StatisticsProps {
 
 const stats = [
   { value: '5+', labelKey: 'yearsExperience' as const },
-  { value: '10K+', labelKey: 'deliveredCargos' as const },
+  { value: '5K+', labelKey: 'deliveredCargos' as const },
   { value: '100+', labelKey: 'partnerCompanies' as const },
   { value: '30+', labelKey: 'countriesCovered' as const },
 ];

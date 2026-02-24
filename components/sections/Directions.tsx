@@ -79,7 +79,7 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
                 </div>
 
                 {/* Services List */}
-                <div className="space-y-3 mb-8">
+                <div className="space-y-3">
                   {direction.services.map((service, serviceIndex) => (
                     <div
                       key={serviceIndex}
@@ -92,7 +92,7 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
                 </div>
 
                 {/* Call to Action Button */}
-                <Button
+                {/* <Button
                   variant="primary"
                   size="md"
                   className="w-full group/btn"
@@ -108,7 +108,7 @@ export const Directions: React.FC<DirectionsProps> = ({ translations }) => {
                     {translations.directions.sendRequest}
                     <ArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-300" size={18} />
                   </span>
-                </Button>
+                </Button> */}
 
                 {/* Decorative Bottom Accent */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
