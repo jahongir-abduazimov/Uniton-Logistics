@@ -21,10 +21,10 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ translations }) => {
   const socialLinks = [
-    { icon: FaTelegramPlane, href: "#", label: "Telegram" },
-    { icon: FaWhatsapp, href: "#", label: "WhatsApp" },
-    { icon: FaWeixin, href: "#", label: "WeChat" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: FaTelegramPlane, href: "https://t.me/tokhir_tolibov1", label: "Telegram" },
+    { icon: FaWhatsapp, href: "https://wa.me/998915371967", label: "WhatsApp" },
+    { icon: FaWeixin, href: "https://u.wechat.com/kLRqN3sb5R7wcaDv-FrxgTO", label: "WeChat" },
+    // { icon: Instagram, href: "#", label: "Instagram" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -61,6 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
+                    target="_blank"
                     className="group relative p-3.5 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-linear-to-br hover:from-white/20 hover:to-[#0ea5e9]/20 transition-all duration-300 hover:scale-110 border border-white/10 hover:border-white/30 hover:shadow-glow"
                   >
                     <Icon

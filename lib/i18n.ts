@@ -433,7 +433,7 @@ export const translations: Record<Locale, Translations> = {
       subtitle: "Международные грузоперевозки",
       getQuote: "Получить консультацию",
       contactUs: "Связаться с нами",
-      yearsOfExcellence: "15+ лет опыта",
+      yearsOfExcellence: "5+ лет опыта",
       deliveries: "Доставок",
       countries: "Стран",
       safetyRate: "Уровень безопасности",
