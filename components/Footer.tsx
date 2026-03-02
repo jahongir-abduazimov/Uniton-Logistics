@@ -163,10 +163,10 @@ export const Footer: React.FC<FooterProps> = ({ translations }) => {
                   <Mail className="text-white" size={18} />
                 </div>
                 <a
-                  href="mailto:info@unitonlogistics.com"
+                  href="mailto:sales@unitonlogistics.com"
                   className="font-medium hover:underline break-all"
                 >
-                  info@unitonlogistics.com
+                  sales@unitonlogistics.com
                 </a>
               </li>
               {translations.contact.info.addressText && (
